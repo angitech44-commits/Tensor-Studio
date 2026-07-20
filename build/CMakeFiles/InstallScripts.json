@@ -1,0 +1,11 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Users/angit/Documents/TensorStudio/build/cmake_install.cmake",
+		"C:/Users/angit/Documents/TensorStudio/build/external/raylib/cmake_install.cmake",
+		"C:/Users/angit/Documents/TensorStudio/build/external/raylib/raylib/cmake_install.cmake",
+		"C:/Users/angit/Documents/TensorStudio/build/external/raylib/raylib/external/glfw/cmake_install.cmake",
+		"C:/Users/angit/Documents/TensorStudio/build/external/raylib/raylib/external/glfw/src/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
