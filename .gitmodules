@@ -8,5 +8,5 @@
     path = external/eigen
     url = https://gitlab.com/libeigen/eigen.git
 [submodule "external/sdl"]
-    path = external/sdl
-    url = https://github.com/libsdl-org/SDL.git
+	path = external/sdl
+	url = https://github.com/libsdl-org/SDL.git
