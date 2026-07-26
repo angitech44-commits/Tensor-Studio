@@ -3,7 +3,7 @@
 #include <vector>
 #include <string>
 
-class SessionSetupModal {
+class SessionSetupView {
 private:
     bool showValidationError = false;
     bool isTrackEditMode = false;
@@ -13,5 +13,5 @@ private:
     std::vector<std::string> availableTracks = {"Local Circuit", "Monza Circuit", "Vallelunga", "Imola"};
 
 public:
-    void Render(Session& session, bool& isProjectOpen, int& activeTab);
+    bool Render(Session& session);
 };

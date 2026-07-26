@@ -12,7 +12,11 @@ Application::~Application() {
 
 void Application::Run() {
     SetConfigFlags(FLAG_WINDOW_RESIZABLE | FLAG_MSAA_4X_HINT);
+    
     InitWindow(width, height, title.c_str());
+    
+    MaximizeWindow();
+    
     SetTargetFPS(60);
 
     rlImGuiSetup(true);
@@ -52,7 +56,7 @@ void Application::Render() {
         if (activeTab == 0) {
             liveDashboardView.Render();
         } else if (activeTab == 1) {
-            analysisWorkspaceView.Render(currentSession, isProjectOpen, activeTab);
+            analysisWorkspaceView.Render();
         }
         ImGui::End();
     }

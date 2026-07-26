@@ -581,29 +581,29 @@ src/ui/views/LiveDashboardView.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/ui/views/LiveDashboardView.cpp.s
 .PHONY : src/ui/views/LiveDashboardView.cpp.s
 
-src/ui/views/SessionSetupModal.obj: src/ui/views/SessionSetupModal.cpp.obj
-.PHONY : src/ui/views/SessionSetupModal.obj
+src/ui/views/SessionSetupView.obj: src/ui/views/SessionSetupView.cpp.obj
+.PHONY : src/ui/views/SessionSetupView.obj
 
 # target to build an object file
-src/ui/views/SessionSetupModal.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupModal.cpp.obj
-.PHONY : src/ui/views/SessionSetupModal.cpp.obj
+src/ui/views/SessionSetupView.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupView.cpp.obj
+.PHONY : src/ui/views/SessionSetupView.cpp.obj
 
-src/ui/views/SessionSetupModal.i: src/ui/views/SessionSetupModal.cpp.i
-.PHONY : src/ui/views/SessionSetupModal.i
+src/ui/views/SessionSetupView.i: src/ui/views/SessionSetupView.cpp.i
+.PHONY : src/ui/views/SessionSetupView.i
 
 # target to preprocess a source file
-src/ui/views/SessionSetupModal.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupModal.cpp.i
-.PHONY : src/ui/views/SessionSetupModal.cpp.i
+src/ui/views/SessionSetupView.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupView.cpp.i
+.PHONY : src/ui/views/SessionSetupView.cpp.i
 
-src/ui/views/SessionSetupModal.s: src/ui/views/SessionSetupModal.cpp.s
-.PHONY : src/ui/views/SessionSetupModal.s
+src/ui/views/SessionSetupView.s: src/ui/views/SessionSetupView.cpp.s
+.PHONY : src/ui/views/SessionSetupView.s
 
 # target to generate assembly for a file
-src/ui/views/SessionSetupModal.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupModal.cpp.s
-.PHONY : src/ui/views/SessionSetupModal.cpp.s
+src/ui/views/SessionSetupView.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupView.cpp.s
+.PHONY : src/ui/views/SessionSetupView.cpp.s
 
 # Help Target
 help:
@@ -666,9 +666,9 @@ help:
 	@echo ... src/ui/views/LiveDashboardView.obj
 	@echo ... src/ui/views/LiveDashboardView.i
 	@echo ... src/ui/views/LiveDashboardView.s
-	@echo ... src/ui/views/SessionSetupModal.obj
-	@echo ... src/ui/views/SessionSetupModal.i
-	@echo ... src/ui/views/SessionSetupModal.s
+	@echo ... src/ui/views/SessionSetupView.obj
+	@echo ... src/ui/views/SessionSetupView.i
+	@echo ... src/ui/views/SessionSetupView.s
 .PHONY : help
 
 

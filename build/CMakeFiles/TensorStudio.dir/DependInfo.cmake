@@ -13,7 +13,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/angit/Documents/TensorStudio/src/ui/Application.cpp" "CMakeFiles/TensorStudio.dir/src/ui/Application.cpp.obj" "gcc" "CMakeFiles/TensorStudio.dir/src/ui/Application.cpp.obj.d"
   "C:/Users/angit/Documents/TensorStudio/src/ui/views/AnalysisWorkspaceView.cpp" "CMakeFiles/TensorStudio.dir/src/ui/views/AnalysisWorkspaceView.cpp.obj" "gcc" "CMakeFiles/TensorStudio.dir/src/ui/views/AnalysisWorkspaceView.cpp.obj.d"
   "C:/Users/angit/Documents/TensorStudio/src/ui/views/LiveDashboardView.cpp" "CMakeFiles/TensorStudio.dir/src/ui/views/LiveDashboardView.cpp.obj" "gcc" "CMakeFiles/TensorStudio.dir/src/ui/views/LiveDashboardView.cpp.obj.d"
-  "C:/Users/angit/Documents/TensorStudio/src/ui/views/SessionSetupModal.cpp" "CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupModal.cpp.obj" "gcc" "CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupModal.cpp.obj.d"
+  "C:/Users/angit/Documents/TensorStudio/src/ui/views/SessionSetupView.cpp" "CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupView.cpp.obj" "gcc" "CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupView.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

@@ -1,11 +1,29 @@
 #pragma once
-#include "SessionSetupModal.hpp"
+#include "SessionSetupView.hpp"
 #include "../../core/Session.hpp"
+#include <vector>
+#include <string>
+#include <memory>
 
 class AnalysisWorkspaceView {
 private:
-    SessionSetupModal setupModal;
 
 public:
-    void Render(Session& session, bool& isProjectOpen, int& activeTab);
+    void Render();
 };
+
+struct AnalysisTab {
+    std::string title;
+    bool isOpen = true;
+
+    bool isConfigured = false;
+
+    bool needsFocus = false;
+
+    std::unique_ptr<Session> sessionData;
+
+    SessionSetupView setupView;
+
+};
+
+inline std::vector<AnalysisTab> openTabs;

@@ -146,20 +146,20 @@ CMakeFiles/TensorStudio.dir/src/ui/views/LiveDashboardView.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TensorStudio.dir/src/ui/views/LiveDashboardView.cpp.s"
 	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\angit\Documents\TensorStudio\src\ui\views\LiveDashboardView.cpp -o CMakeFiles\TensorStudio.dir\src\ui\views\LiveDashboardView.cpp.s
 
-CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupModal.cpp.obj: CMakeFiles/TensorStudio.dir/flags.make
-CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupModal.cpp.obj: CMakeFiles/TensorStudio.dir/includes_CXX.rsp
-CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupModal.cpp.obj: C:/Users/angit/Documents/TensorStudio/src/ui/views/SessionSetupModal.cpp
-CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupModal.cpp.obj: CMakeFiles/TensorStudio.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\angit\Documents\TensorStudio\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupModal.cpp.obj"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupModal.cpp.obj -MF CMakeFiles\TensorStudio.dir\src\ui\views\SessionSetupModal.cpp.obj.d -o CMakeFiles\TensorStudio.dir\src\ui\views\SessionSetupModal.cpp.obj -c C:\Users\angit\Documents\TensorStudio\src\ui\views\SessionSetupModal.cpp
+CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupView.cpp.obj: CMakeFiles/TensorStudio.dir/flags.make
+CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupView.cpp.obj: CMakeFiles/TensorStudio.dir/includes_CXX.rsp
+CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupView.cpp.obj: C:/Users/angit/Documents/TensorStudio/src/ui/views/SessionSetupView.cpp
+CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupView.cpp.obj: CMakeFiles/TensorStudio.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\angit\Documents\TensorStudio\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupView.cpp.obj"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupView.cpp.obj -MF CMakeFiles\TensorStudio.dir\src\ui\views\SessionSetupView.cpp.obj.d -o CMakeFiles\TensorStudio.dir\src\ui\views\SessionSetupView.cpp.obj -c C:\Users\angit\Documents\TensorStudio\src\ui\views\SessionSetupView.cpp
 
-CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupModal.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupModal.cpp.i"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\angit\Documents\TensorStudio\src\ui\views\SessionSetupModal.cpp > CMakeFiles\TensorStudio.dir\src\ui\views\SessionSetupModal.cpp.i
+CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupView.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupView.cpp.i"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\angit\Documents\TensorStudio\src\ui\views\SessionSetupView.cpp > CMakeFiles\TensorStudio.dir\src\ui\views\SessionSetupView.cpp.i
 
-CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupModal.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupModal.cpp.s"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\angit\Documents\TensorStudio\src\ui\views\SessionSetupModal.cpp -o CMakeFiles\TensorStudio.dir\src\ui\views\SessionSetupModal.cpp.s
+CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupView.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupView.cpp.s"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\angit\Documents\TensorStudio\src\ui\views\SessionSetupView.cpp -o CMakeFiles\TensorStudio.dir\src\ui\views\SessionSetupView.cpp.s
 
 # Object files for target TensorStudio
 TensorStudio_OBJECTS = \
@@ -168,7 +168,7 @@ TensorStudio_OBJECTS = \
 "CMakeFiles/TensorStudio.dir/src/ui/Application.cpp.obj" \
 "CMakeFiles/TensorStudio.dir/src/ui/views/AnalysisWorkspaceView.cpp.obj" \
 "CMakeFiles/TensorStudio.dir/src/ui/views/LiveDashboardView.cpp.obj" \
-"CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupModal.cpp.obj"
+"CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupView.cpp.obj"
 
 # External object files for target TensorStudio
 TensorStudio_EXTERNAL_OBJECTS =
@@ -178,7 +178,7 @@ TensorStudio.exe: CMakeFiles/TensorStudio.dir/src/main.cpp.obj
 TensorStudio.exe: CMakeFiles/TensorStudio.dir/src/ui/Application.cpp.obj
 TensorStudio.exe: CMakeFiles/TensorStudio.dir/src/ui/views/AnalysisWorkspaceView.cpp.obj
 TensorStudio.exe: CMakeFiles/TensorStudio.dir/src/ui/views/LiveDashboardView.cpp.obj
-TensorStudio.exe: CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupModal.cpp.obj
+TensorStudio.exe: CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupView.cpp.obj
 TensorStudio.exe: CMakeFiles/TensorStudio.dir/build.make
 TensorStudio.exe: external/raylib/raylib/libraylib.a
 TensorStudio.exe: librlImGui.a

@@ -200,8 +200,8 @@ CMakeFiles/rlImGui.dir/clean:
 # Target rules for target CMakeFiles/TensorStudio.dir
 
 # All Build rule for target.
-CMakeFiles/TensorStudio.dir/all: external/raylib/raylib/CMakeFiles/raylib.dir/all
 CMakeFiles/TensorStudio.dir/all: CMakeFiles/rlImGui.dir/all
+CMakeFiles/TensorStudio.dir/all: external/raylib/raylib/CMakeFiles/raylib.dir/all
 CMakeFiles/TensorStudio.dir/all: external/raylib/raylib/external/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/build
