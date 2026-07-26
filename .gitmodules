@@ -10,3 +10,12 @@
 [submodule "external/sdl"]
 	path = external/sdl
 	url = https://github.com/libsdl-org/SDL.git
+[submodule "external/json"]
+	path = external/json
+	url = https://github.com/nlohmann/json.git
+[submodule "external/stb"]
+	path = external/stb
+	url = https://github.com/nothings/stb.git
+[submodule "external/vcpkg"]
+	path = external/vcpkg
+	url = https://github.com/microsoft/vcpkg.git
