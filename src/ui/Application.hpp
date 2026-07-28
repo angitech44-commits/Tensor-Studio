@@ -4,6 +4,9 @@
 #include "views/AnalysisWorkspaceView.hpp"
 #include "../core/Session.hpp"
 
+struct SDL_Window;
+struct SDL_Renderer;
+
 class Application {
 private:
     std::string title;
@@ -12,6 +15,9 @@ private:
     bool isRunning;
     int activeTab = -1;
     bool isProjectOpen = false;
+
+    SDL_Window* window = nullptr;
+    SDL_Renderer* renderer = nullptr;
 
     Session currentSession;
     LiveDashboardView liveDashboardView;

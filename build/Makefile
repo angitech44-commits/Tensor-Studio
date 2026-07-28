@@ -64,26 +64,6 @@ CMAKE_BINARY_DIR = C:\Users\angit\Documents\TensorStudio\build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target package
-package: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool..."
-	"C:\Program Files\CMake\bin\cpack.exe" --config ./CPackConfig.cmake
-.PHONY : package
-
-# Special rule for the target package
-package/fast: package
-.PHONY : package/fast
-
-# Special rule for the target package_source
-package_source:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool for source..."
-	"C:\Program Files\CMake\bin\cpack.exe" --config ./CPackSourceConfig.cmake
-.PHONY : package_source
-
-# Special rule for the target package_source
-package_source/fast: package_source
-.PHONY : package_source/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
@@ -103,51 +83,6 @@ rebuild_cache:
 # Special rule for the target rebuild_cache
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-.PHONY : list_install_components/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	"C:\Program Files\CMake\bin\cmake.exe" -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	"C:\Program Files\CMake\bin\cmake.exe" -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	"C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	"C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	"C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	"C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -177,21 +112,22 @@ preinstall/fast:
 
 # clear depends
 depend:
+	$(CMAKE_COMMAND) -P C:\Users\angit\Documents\TensorStudio\build\CMakeFiles\VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named rlImGui
+# Target rules for targets named CoreImGui
 
 # Build rule for target.
-rlImGui: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 rlImGui
-.PHONY : rlImGui
+CoreImGui: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CoreImGui
+.PHONY : CoreImGui
 
 # fast build rule for target.
-rlImGui/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\rlImGui.dir\build.make CMakeFiles/rlImGui.dir/build
-.PHONY : rlImGui/fast
+CoreImGui/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CoreImGui.dir\build.make CMakeFiles/CoreImGui.dir/build
+.PHONY : CoreImGui/fast
 
 #=============================================================================
 # Target rules for targets named TensorStudio
@@ -207,50 +143,85 @@ TensorStudio/fast:
 .PHONY : TensorStudio/fast
 
 #=============================================================================
-# Target rules for targets named raylib
+# Target rules for targets named SDL3-static
 
 # Build rule for target.
-raylib: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 raylib
-.PHONY : raylib
+SDL3-static: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 SDL3-static
+.PHONY : SDL3-static
 
 # fast build rule for target.
-raylib/fast:
-	$(MAKE) $(MAKESILENT) -f external\raylib\raylib\CMakeFiles\raylib.dir\build.make external/raylib/raylib/CMakeFiles/raylib.dir/build
-.PHONY : raylib/fast
+SDL3-static/fast:
+	$(MAKE) $(MAKESILENT) -f external\sdl\CMakeFiles\SDL3-static.dir\build.make external/sdl/CMakeFiles/SDL3-static.dir/build
+.PHONY : SDL3-static/fast
 
 #=============================================================================
-# Target rules for targets named glfw
+# Target rules for targets named SDL3_test
 
 # Build rule for target.
-glfw: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 glfw
-.PHONY : glfw
+SDL3_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 SDL3_test
+.PHONY : SDL3_test
 
 # fast build rule for target.
-glfw/fast:
-	$(MAKE) $(MAKESILENT) -f external\raylib\raylib\external\glfw\src\CMakeFiles\glfw.dir\build.make external/raylib/raylib/external/glfw/src/CMakeFiles/glfw.dir/build
-.PHONY : glfw/fast
+SDL3_test/fast:
+	$(MAKE) $(MAKESILENT) -f external\sdl\CMakeFiles\SDL3_test.dir\build.make external/sdl/CMakeFiles/SDL3_test.dir/build
+.PHONY : SDL3_test/fast
 
-#=============================================================================
-# Target rules for targets named update_mappings
+external/imgui/backends/imgui_impl_sdl3.obj: external/imgui/backends/imgui_impl_sdl3.cpp.obj
+.PHONY : external/imgui/backends/imgui_impl_sdl3.obj
 
-# Build rule for target.
-update_mappings: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 update_mappings
-.PHONY : update_mappings
+# target to build an object file
+external/imgui/backends/imgui_impl_sdl3.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CoreImGui.dir\build.make CMakeFiles/CoreImGui.dir/external/imgui/backends/imgui_impl_sdl3.cpp.obj
+.PHONY : external/imgui/backends/imgui_impl_sdl3.cpp.obj
 
-# fast build rule for target.
-update_mappings/fast:
-	$(MAKE) $(MAKESILENT) -f external\raylib\raylib\external\glfw\src\CMakeFiles\update_mappings.dir\build.make external/raylib/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/build
-.PHONY : update_mappings/fast
+external/imgui/backends/imgui_impl_sdl3.i: external/imgui/backends/imgui_impl_sdl3.cpp.i
+.PHONY : external/imgui/backends/imgui_impl_sdl3.i
+
+# target to preprocess a source file
+external/imgui/backends/imgui_impl_sdl3.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CoreImGui.dir\build.make CMakeFiles/CoreImGui.dir/external/imgui/backends/imgui_impl_sdl3.cpp.i
+.PHONY : external/imgui/backends/imgui_impl_sdl3.cpp.i
+
+external/imgui/backends/imgui_impl_sdl3.s: external/imgui/backends/imgui_impl_sdl3.cpp.s
+.PHONY : external/imgui/backends/imgui_impl_sdl3.s
+
+# target to generate assembly for a file
+external/imgui/backends/imgui_impl_sdl3.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CoreImGui.dir\build.make CMakeFiles/CoreImGui.dir/external/imgui/backends/imgui_impl_sdl3.cpp.s
+.PHONY : external/imgui/backends/imgui_impl_sdl3.cpp.s
+
+external/imgui/backends/imgui_impl_sdlrenderer3.obj: external/imgui/backends/imgui_impl_sdlrenderer3.cpp.obj
+.PHONY : external/imgui/backends/imgui_impl_sdlrenderer3.obj
+
+# target to build an object file
+external/imgui/backends/imgui_impl_sdlrenderer3.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CoreImGui.dir\build.make CMakeFiles/CoreImGui.dir/external/imgui/backends/imgui_impl_sdlrenderer3.cpp.obj
+.PHONY : external/imgui/backends/imgui_impl_sdlrenderer3.cpp.obj
+
+external/imgui/backends/imgui_impl_sdlrenderer3.i: external/imgui/backends/imgui_impl_sdlrenderer3.cpp.i
+.PHONY : external/imgui/backends/imgui_impl_sdlrenderer3.i
+
+# target to preprocess a source file
+external/imgui/backends/imgui_impl_sdlrenderer3.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CoreImGui.dir\build.make CMakeFiles/CoreImGui.dir/external/imgui/backends/imgui_impl_sdlrenderer3.cpp.i
+.PHONY : external/imgui/backends/imgui_impl_sdlrenderer3.cpp.i
+
+external/imgui/backends/imgui_impl_sdlrenderer3.s: external/imgui/backends/imgui_impl_sdlrenderer3.cpp.s
+.PHONY : external/imgui/backends/imgui_impl_sdlrenderer3.s
+
+# target to generate assembly for a file
+external/imgui/backends/imgui_impl_sdlrenderer3.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CoreImGui.dir\build.make CMakeFiles/CoreImGui.dir/external/imgui/backends/imgui_impl_sdlrenderer3.cpp.s
+.PHONY : external/imgui/backends/imgui_impl_sdlrenderer3.cpp.s
 
 external/imgui/imgui.obj: external/imgui/imgui.cpp.obj
 .PHONY : external/imgui/imgui.obj
 
 # target to build an object file
 external/imgui/imgui.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\rlImGui.dir\build.make CMakeFiles/rlImGui.dir/external/imgui/imgui.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CoreImGui.dir\build.make CMakeFiles/CoreImGui.dir/external/imgui/imgui.cpp.obj
 .PHONY : external/imgui/imgui.cpp.obj
 
 external/imgui/imgui.i: external/imgui/imgui.cpp.i
@@ -258,7 +229,7 @@ external/imgui/imgui.i: external/imgui/imgui.cpp.i
 
 # target to preprocess a source file
 external/imgui/imgui.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\rlImGui.dir\build.make CMakeFiles/rlImGui.dir/external/imgui/imgui.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CoreImGui.dir\build.make CMakeFiles/CoreImGui.dir/external/imgui/imgui.cpp.i
 .PHONY : external/imgui/imgui.cpp.i
 
 external/imgui/imgui.s: external/imgui/imgui.cpp.s
@@ -266,7 +237,7 @@ external/imgui/imgui.s: external/imgui/imgui.cpp.s
 
 # target to generate assembly for a file
 external/imgui/imgui.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\rlImGui.dir\build.make CMakeFiles/rlImGui.dir/external/imgui/imgui.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CoreImGui.dir\build.make CMakeFiles/CoreImGui.dir/external/imgui/imgui.cpp.s
 .PHONY : external/imgui/imgui.cpp.s
 
 external/imgui/imgui_demo.obj: external/imgui/imgui_demo.cpp.obj
@@ -274,7 +245,7 @@ external/imgui/imgui_demo.obj: external/imgui/imgui_demo.cpp.obj
 
 # target to build an object file
 external/imgui/imgui_demo.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\rlImGui.dir\build.make CMakeFiles/rlImGui.dir/external/imgui/imgui_demo.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CoreImGui.dir\build.make CMakeFiles/CoreImGui.dir/external/imgui/imgui_demo.cpp.obj
 .PHONY : external/imgui/imgui_demo.cpp.obj
 
 external/imgui/imgui_demo.i: external/imgui/imgui_demo.cpp.i
@@ -282,7 +253,7 @@ external/imgui/imgui_demo.i: external/imgui/imgui_demo.cpp.i
 
 # target to preprocess a source file
 external/imgui/imgui_demo.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\rlImGui.dir\build.make CMakeFiles/rlImGui.dir/external/imgui/imgui_demo.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CoreImGui.dir\build.make CMakeFiles/CoreImGui.dir/external/imgui/imgui_demo.cpp.i
 .PHONY : external/imgui/imgui_demo.cpp.i
 
 external/imgui/imgui_demo.s: external/imgui/imgui_demo.cpp.s
@@ -290,7 +261,7 @@ external/imgui/imgui_demo.s: external/imgui/imgui_demo.cpp.s
 
 # target to generate assembly for a file
 external/imgui/imgui_demo.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\rlImGui.dir\build.make CMakeFiles/rlImGui.dir/external/imgui/imgui_demo.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CoreImGui.dir\build.make CMakeFiles/CoreImGui.dir/external/imgui/imgui_demo.cpp.s
 .PHONY : external/imgui/imgui_demo.cpp.s
 
 external/imgui/imgui_draw.obj: external/imgui/imgui_draw.cpp.obj
@@ -298,7 +269,7 @@ external/imgui/imgui_draw.obj: external/imgui/imgui_draw.cpp.obj
 
 # target to build an object file
 external/imgui/imgui_draw.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\rlImGui.dir\build.make CMakeFiles/rlImGui.dir/external/imgui/imgui_draw.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CoreImGui.dir\build.make CMakeFiles/CoreImGui.dir/external/imgui/imgui_draw.cpp.obj
 .PHONY : external/imgui/imgui_draw.cpp.obj
 
 external/imgui/imgui_draw.i: external/imgui/imgui_draw.cpp.i
@@ -306,7 +277,7 @@ external/imgui/imgui_draw.i: external/imgui/imgui_draw.cpp.i
 
 # target to preprocess a source file
 external/imgui/imgui_draw.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\rlImGui.dir\build.make CMakeFiles/rlImGui.dir/external/imgui/imgui_draw.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CoreImGui.dir\build.make CMakeFiles/CoreImGui.dir/external/imgui/imgui_draw.cpp.i
 .PHONY : external/imgui/imgui_draw.cpp.i
 
 external/imgui/imgui_draw.s: external/imgui/imgui_draw.cpp.s
@@ -314,7 +285,7 @@ external/imgui/imgui_draw.s: external/imgui/imgui_draw.cpp.s
 
 # target to generate assembly for a file
 external/imgui/imgui_draw.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\rlImGui.dir\build.make CMakeFiles/rlImGui.dir/external/imgui/imgui_draw.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CoreImGui.dir\build.make CMakeFiles/CoreImGui.dir/external/imgui/imgui_draw.cpp.s
 .PHONY : external/imgui/imgui_draw.cpp.s
 
 external/imgui/imgui_tables.obj: external/imgui/imgui_tables.cpp.obj
@@ -322,7 +293,7 @@ external/imgui/imgui_tables.obj: external/imgui/imgui_tables.cpp.obj
 
 # target to build an object file
 external/imgui/imgui_tables.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\rlImGui.dir\build.make CMakeFiles/rlImGui.dir/external/imgui/imgui_tables.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CoreImGui.dir\build.make CMakeFiles/CoreImGui.dir/external/imgui/imgui_tables.cpp.obj
 .PHONY : external/imgui/imgui_tables.cpp.obj
 
 external/imgui/imgui_tables.i: external/imgui/imgui_tables.cpp.i
@@ -330,7 +301,7 @@ external/imgui/imgui_tables.i: external/imgui/imgui_tables.cpp.i
 
 # target to preprocess a source file
 external/imgui/imgui_tables.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\rlImGui.dir\build.make CMakeFiles/rlImGui.dir/external/imgui/imgui_tables.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CoreImGui.dir\build.make CMakeFiles/CoreImGui.dir/external/imgui/imgui_tables.cpp.i
 .PHONY : external/imgui/imgui_tables.cpp.i
 
 external/imgui/imgui_tables.s: external/imgui/imgui_tables.cpp.s
@@ -338,7 +309,7 @@ external/imgui/imgui_tables.s: external/imgui/imgui_tables.cpp.s
 
 # target to generate assembly for a file
 external/imgui/imgui_tables.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\rlImGui.dir\build.make CMakeFiles/rlImGui.dir/external/imgui/imgui_tables.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CoreImGui.dir\build.make CMakeFiles/CoreImGui.dir/external/imgui/imgui_tables.cpp.s
 .PHONY : external/imgui/imgui_tables.cpp.s
 
 external/imgui/imgui_widgets.obj: external/imgui/imgui_widgets.cpp.obj
@@ -346,7 +317,7 @@ external/imgui/imgui_widgets.obj: external/imgui/imgui_widgets.cpp.obj
 
 # target to build an object file
 external/imgui/imgui_widgets.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\rlImGui.dir\build.make CMakeFiles/rlImGui.dir/external/imgui/imgui_widgets.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CoreImGui.dir\build.make CMakeFiles/CoreImGui.dir/external/imgui/imgui_widgets.cpp.obj
 .PHONY : external/imgui/imgui_widgets.cpp.obj
 
 external/imgui/imgui_widgets.i: external/imgui/imgui_widgets.cpp.i
@@ -354,7 +325,7 @@ external/imgui/imgui_widgets.i: external/imgui/imgui_widgets.cpp.i
 
 # target to preprocess a source file
 external/imgui/imgui_widgets.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\rlImGui.dir\build.make CMakeFiles/rlImGui.dir/external/imgui/imgui_widgets.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CoreImGui.dir\build.make CMakeFiles/CoreImGui.dir/external/imgui/imgui_widgets.cpp.i
 .PHONY : external/imgui/imgui_widgets.cpp.i
 
 external/imgui/imgui_widgets.s: external/imgui/imgui_widgets.cpp.s
@@ -362,7 +333,7 @@ external/imgui/imgui_widgets.s: external/imgui/imgui_widgets.cpp.s
 
 # target to generate assembly for a file
 external/imgui/imgui_widgets.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\rlImGui.dir\build.make CMakeFiles/rlImGui.dir/external/imgui/imgui_widgets.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CoreImGui.dir\build.make CMakeFiles/CoreImGui.dir/external/imgui/imgui_widgets.cpp.s
 .PHONY : external/imgui/imgui_widgets.cpp.s
 
 external/implot/implot.obj: external/implot/implot.cpp.obj
@@ -370,7 +341,7 @@ external/implot/implot.obj: external/implot/implot.cpp.obj
 
 # target to build an object file
 external/implot/implot.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\rlImGui.dir\build.make CMakeFiles/rlImGui.dir/external/implot/implot.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CoreImGui.dir\build.make CMakeFiles/CoreImGui.dir/external/implot/implot.cpp.obj
 .PHONY : external/implot/implot.cpp.obj
 
 external/implot/implot.i: external/implot/implot.cpp.i
@@ -378,7 +349,7 @@ external/implot/implot.i: external/implot/implot.cpp.i
 
 # target to preprocess a source file
 external/implot/implot.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\rlImGui.dir\build.make CMakeFiles/rlImGui.dir/external/implot/implot.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CoreImGui.dir\build.make CMakeFiles/CoreImGui.dir/external/implot/implot.cpp.i
 .PHONY : external/implot/implot.cpp.i
 
 external/implot/implot.s: external/implot/implot.cpp.s
@@ -386,7 +357,7 @@ external/implot/implot.s: external/implot/implot.cpp.s
 
 # target to generate assembly for a file
 external/implot/implot.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\rlImGui.dir\build.make CMakeFiles/rlImGui.dir/external/implot/implot.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CoreImGui.dir\build.make CMakeFiles/CoreImGui.dir/external/implot/implot.cpp.s
 .PHONY : external/implot/implot.cpp.s
 
 external/implot/implot_demo.obj: external/implot/implot_demo.cpp.obj
@@ -394,7 +365,7 @@ external/implot/implot_demo.obj: external/implot/implot_demo.cpp.obj
 
 # target to build an object file
 external/implot/implot_demo.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\rlImGui.dir\build.make CMakeFiles/rlImGui.dir/external/implot/implot_demo.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CoreImGui.dir\build.make CMakeFiles/CoreImGui.dir/external/implot/implot_demo.cpp.obj
 .PHONY : external/implot/implot_demo.cpp.obj
 
 external/implot/implot_demo.i: external/implot/implot_demo.cpp.i
@@ -402,7 +373,7 @@ external/implot/implot_demo.i: external/implot/implot_demo.cpp.i
 
 # target to preprocess a source file
 external/implot/implot_demo.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\rlImGui.dir\build.make CMakeFiles/rlImGui.dir/external/implot/implot_demo.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CoreImGui.dir\build.make CMakeFiles/CoreImGui.dir/external/implot/implot_demo.cpp.i
 .PHONY : external/implot/implot_demo.cpp.i
 
 external/implot/implot_demo.s: external/implot/implot_demo.cpp.s
@@ -410,7 +381,7 @@ external/implot/implot_demo.s: external/implot/implot_demo.cpp.s
 
 # target to generate assembly for a file
 external/implot/implot_demo.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\rlImGui.dir\build.make CMakeFiles/rlImGui.dir/external/implot/implot_demo.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CoreImGui.dir\build.make CMakeFiles/CoreImGui.dir/external/implot/implot_demo.cpp.s
 .PHONY : external/implot/implot_demo.cpp.s
 
 external/implot/implot_items.obj: external/implot/implot_items.cpp.obj
@@ -418,7 +389,7 @@ external/implot/implot_items.obj: external/implot/implot_items.cpp.obj
 
 # target to build an object file
 external/implot/implot_items.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\rlImGui.dir\build.make CMakeFiles/rlImGui.dir/external/implot/implot_items.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CoreImGui.dir\build.make CMakeFiles/CoreImGui.dir/external/implot/implot_items.cpp.obj
 .PHONY : external/implot/implot_items.cpp.obj
 
 external/implot/implot_items.i: external/implot/implot_items.cpp.i
@@ -426,7 +397,7 @@ external/implot/implot_items.i: external/implot/implot_items.cpp.i
 
 # target to preprocess a source file
 external/implot/implot_items.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\rlImGui.dir\build.make CMakeFiles/rlImGui.dir/external/implot/implot_items.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CoreImGui.dir\build.make CMakeFiles/CoreImGui.dir/external/implot/implot_items.cpp.i
 .PHONY : external/implot/implot_items.cpp.i
 
 external/implot/implot_items.s: external/implot/implot_items.cpp.s
@@ -434,32 +405,8 @@ external/implot/implot_items.s: external/implot/implot_items.cpp.s
 
 # target to generate assembly for a file
 external/implot/implot_items.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\rlImGui.dir\build.make CMakeFiles/rlImGui.dir/external/implot/implot_items.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CoreImGui.dir\build.make CMakeFiles/CoreImGui.dir/external/implot/implot_items.cpp.s
 .PHONY : external/implot/implot_items.cpp.s
-
-external/rlImGui/rlImGui.obj: external/rlImGui/rlImGui.cpp.obj
-.PHONY : external/rlImGui/rlImGui.obj
-
-# target to build an object file
-external/rlImGui/rlImGui.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\rlImGui.dir\build.make CMakeFiles/rlImGui.dir/external/rlImGui/rlImGui.cpp.obj
-.PHONY : external/rlImGui/rlImGui.cpp.obj
-
-external/rlImGui/rlImGui.i: external/rlImGui/rlImGui.cpp.i
-.PHONY : external/rlImGui/rlImGui.i
-
-# target to preprocess a source file
-external/rlImGui/rlImGui.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\rlImGui.dir\build.make CMakeFiles/rlImGui.dir/external/rlImGui/rlImGui.cpp.i
-.PHONY : external/rlImGui/rlImGui.cpp.i
-
-external/rlImGui/rlImGui.s: external/rlImGui/rlImGui.cpp.s
-.PHONY : external/rlImGui/rlImGui.s
-
-# target to generate assembly for a file
-external/rlImGui/rlImGui.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\rlImGui.dir\build.make CMakeFiles/rlImGui.dir/external/rlImGui/rlImGui.cpp.s
-.PHONY : external/rlImGui/rlImGui.cpp.s
 
 src/core/Session.obj: src/core/Session.cpp.obj
 .PHONY : src/core/Session.obj
@@ -484,6 +431,30 @@ src/core/Session.s: src/core/Session.cpp.s
 src/core/Session.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/core/Session.cpp.s
 .PHONY : src/core/Session.cpp.s
+
+src/io/TrackSerializer.obj: src/io/TrackSerializer.cpp.obj
+.PHONY : src/io/TrackSerializer.obj
+
+# target to build an object file
+src/io/TrackSerializer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/io/TrackSerializer.cpp.obj
+.PHONY : src/io/TrackSerializer.cpp.obj
+
+src/io/TrackSerializer.i: src/io/TrackSerializer.cpp.i
+.PHONY : src/io/TrackSerializer.i
+
+# target to preprocess a source file
+src/io/TrackSerializer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/io/TrackSerializer.cpp.i
+.PHONY : src/io/TrackSerializer.cpp.i
+
+src/io/TrackSerializer.s: src/io/TrackSerializer.cpp.s
+.PHONY : src/io/TrackSerializer.s
+
+# target to generate assembly for a file
+src/io/TrackSerializer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/io/TrackSerializer.cpp.s
+.PHONY : src/io/TrackSerializer.cpp.s
 
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
@@ -532,6 +503,54 @@ src/ui/Application.s: src/ui/Application.cpp.s
 src/ui/Application.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/ui/Application.cpp.s
 .PHONY : src/ui/Application.cpp.s
+
+src/ui/components/TrackManagerModal.obj: src/ui/components/TrackManagerModal.cpp.obj
+.PHONY : src/ui/components/TrackManagerModal.obj
+
+# target to build an object file
+src/ui/components/TrackManagerModal.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/ui/components/TrackManagerModal.cpp.obj
+.PHONY : src/ui/components/TrackManagerModal.cpp.obj
+
+src/ui/components/TrackManagerModal.i: src/ui/components/TrackManagerModal.cpp.i
+.PHONY : src/ui/components/TrackManagerModal.i
+
+# target to preprocess a source file
+src/ui/components/TrackManagerModal.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/ui/components/TrackManagerModal.cpp.i
+.PHONY : src/ui/components/TrackManagerModal.cpp.i
+
+src/ui/components/TrackManagerModal.s: src/ui/components/TrackManagerModal.cpp.s
+.PHONY : src/ui/components/TrackManagerModal.s
+
+# target to generate assembly for a file
+src/ui/components/TrackManagerModal.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/ui/components/TrackManagerModal.cpp.s
+.PHONY : src/ui/components/TrackManagerModal.cpp.s
+
+src/ui/components/TrackMapView.obj: src/ui/components/TrackMapView.cpp.obj
+.PHONY : src/ui/components/TrackMapView.obj
+
+# target to build an object file
+src/ui/components/TrackMapView.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/ui/components/TrackMapView.cpp.obj
+.PHONY : src/ui/components/TrackMapView.cpp.obj
+
+src/ui/components/TrackMapView.i: src/ui/components/TrackMapView.cpp.i
+.PHONY : src/ui/components/TrackMapView.i
+
+# target to preprocess a source file
+src/ui/components/TrackMapView.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/ui/components/TrackMapView.cpp.i
+.PHONY : src/ui/components/TrackMapView.cpp.i
+
+src/ui/components/TrackMapView.s: src/ui/components/TrackMapView.cpp.s
+.PHONY : src/ui/components/TrackMapView.s
+
+# target to generate assembly for a file
+src/ui/components/TrackMapView.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/ui/components/TrackMapView.cpp.s
+.PHONY : src/ui/components/TrackMapView.cpp.s
 
 src/ui/views/AnalysisWorkspaceView.obj: src/ui/views/AnalysisWorkspaceView.cpp.obj
 .PHONY : src/ui/views/AnalysisWorkspaceView.obj
@@ -605,6 +624,54 @@ src/ui/views/SessionSetupView.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupView.cpp.s
 .PHONY : src/ui/views/SessionSetupView.cpp.s
 
+src/utils/GeoMath.obj: src/utils/GeoMath.cpp.obj
+.PHONY : src/utils/GeoMath.obj
+
+# target to build an object file
+src/utils/GeoMath.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/utils/GeoMath.cpp.obj
+.PHONY : src/utils/GeoMath.cpp.obj
+
+src/utils/GeoMath.i: src/utils/GeoMath.cpp.i
+.PHONY : src/utils/GeoMath.i
+
+# target to preprocess a source file
+src/utils/GeoMath.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/utils/GeoMath.cpp.i
+.PHONY : src/utils/GeoMath.cpp.i
+
+src/utils/GeoMath.s: src/utils/GeoMath.cpp.s
+.PHONY : src/utils/GeoMath.s
+
+# target to generate assembly for a file
+src/utils/GeoMath.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/utils/GeoMath.cpp.s
+.PHONY : src/utils/GeoMath.cpp.s
+
+src/utils/TileManager.obj: src/utils/TileManager.cpp.obj
+.PHONY : src/utils/TileManager.obj
+
+# target to build an object file
+src/utils/TileManager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/utils/TileManager.cpp.obj
+.PHONY : src/utils/TileManager.cpp.obj
+
+src/utils/TileManager.i: src/utils/TileManager.cpp.i
+.PHONY : src/utils/TileManager.i
+
+# target to preprocess a source file
+src/utils/TileManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/utils/TileManager.cpp.i
+.PHONY : src/utils/TileManager.cpp.i
+
+src/utils/TileManager.s: src/utils/TileManager.cpp.s
+.PHONY : src/utils/TileManager.s
+
+# target to generate assembly for a file
+src/utils/TileManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/utils/TileManager.cpp.s
+.PHONY : src/utils/TileManager.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -612,18 +679,17 @@ help:
 	@echo ... clean
 	@echo ... depend
 	@echo ... edit_cache
-	@echo ... install
-	@echo ... install/local
-	@echo ... install/strip
-	@echo ... list_install_components
-	@echo ... package
-	@echo ... package_source
 	@echo ... rebuild_cache
-	@echo ... update_mappings
+	@echo ... CoreImGui
+	@echo ... SDL3-static
+	@echo ... SDL3_test
 	@echo ... TensorStudio
-	@echo ... glfw
-	@echo ... raylib
-	@echo ... rlImGui
+	@echo ... external/imgui/backends/imgui_impl_sdl3.obj
+	@echo ... external/imgui/backends/imgui_impl_sdl3.i
+	@echo ... external/imgui/backends/imgui_impl_sdl3.s
+	@echo ... external/imgui/backends/imgui_impl_sdlrenderer3.obj
+	@echo ... external/imgui/backends/imgui_impl_sdlrenderer3.i
+	@echo ... external/imgui/backends/imgui_impl_sdlrenderer3.s
 	@echo ... external/imgui/imgui.obj
 	@echo ... external/imgui/imgui.i
 	@echo ... external/imgui/imgui.s
@@ -648,18 +714,24 @@ help:
 	@echo ... external/implot/implot_items.obj
 	@echo ... external/implot/implot_items.i
 	@echo ... external/implot/implot_items.s
-	@echo ... external/rlImGui/rlImGui.obj
-	@echo ... external/rlImGui/rlImGui.i
-	@echo ... external/rlImGui/rlImGui.s
 	@echo ... src/core/Session.obj
 	@echo ... src/core/Session.i
 	@echo ... src/core/Session.s
+	@echo ... src/io/TrackSerializer.obj
+	@echo ... src/io/TrackSerializer.i
+	@echo ... src/io/TrackSerializer.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
 	@echo ... src/ui/Application.obj
 	@echo ... src/ui/Application.i
 	@echo ... src/ui/Application.s
+	@echo ... src/ui/components/TrackManagerModal.obj
+	@echo ... src/ui/components/TrackManagerModal.i
+	@echo ... src/ui/components/TrackManagerModal.s
+	@echo ... src/ui/components/TrackMapView.obj
+	@echo ... src/ui/components/TrackMapView.i
+	@echo ... src/ui/components/TrackMapView.s
 	@echo ... src/ui/views/AnalysisWorkspaceView.obj
 	@echo ... src/ui/views/AnalysisWorkspaceView.i
 	@echo ... src/ui/views/AnalysisWorkspaceView.s
@@ -669,6 +741,12 @@ help:
 	@echo ... src/ui/views/SessionSetupView.obj
 	@echo ... src/ui/views/SessionSetupView.i
 	@echo ... src/ui/views/SessionSetupView.s
+	@echo ... src/utils/GeoMath.obj
+	@echo ... src/utils/GeoMath.i
+	@echo ... src/utils/GeoMath.s
+	@echo ... src/utils/TileManager.obj
+	@echo ... src/utils/TileManager.i
+	@echo ... src/utils/TileManager.s
 .PHONY : help
 
 
@@ -680,6 +758,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
+	$(CMAKE_COMMAND) -P C:\Users\angit\Documents\TensorStudio\build\CMakeFiles\VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

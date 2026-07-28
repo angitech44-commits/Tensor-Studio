@@ -104,4 +104,4 @@ CMakeFiles/TensorStudio.dir/src/core/Session.cpp.obj: \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_bvector.h \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/vector.tcc \
  C:\Users\angit\Documents\TensorStudio\src\core\DriverEntry.hpp \
- C:\Users\angit\Documents\TensorStudio\src\core\TrackConfig.hpp
+ C:\Users\angit\Documents\TensorStudio\src\core\Track.hpp

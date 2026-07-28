@@ -1,8 +1,22 @@
 cmake_minimum_required(VERSION 3.20)
+
+# -------------------------------------------------------------------
+# VCPKG TOOLCHAIN (Rigorosamente PRIMA di project())
+# -------------------------------------------------------------------
+set(CMAKE_TOOLCHAIN_FILE "${CMAKE_CURRENT_SOURCE_DIR}/external/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "Vcpkg toolchain file")
+
 project(TensorStudio VERSION 0.1.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# -------------------------------------------------------------------
+# VCPKG PACKAGES (Librerie gestite dal manifest vcpkg.json)
+# -------------------------------------------------------------------
+find_package(CURL REQUIRED)
+find_package(nlohmann_json CONFIG REQUIRED)
+# stb è header-only, quindi cerchiamo solo il percorso del file
+find_path(STB_INCLUDE_DIR stb_image.h REQUIRED)
 
 # -------------------------------------------------------------------
 # EIGEN
@@ -47,10 +61,23 @@ target_link_libraries(CoreImGui PUBLIC SDL3::SDL3-static)
 file(GLOB_RECURSE SOURCES "src/*.cpp")
 add_executable(${PROJECT_NAME} ${SOURCES})
 
-target_include_directories(${PROJECT_NAME} PRIVATE src)
+target_compile_definitions(TensorStudio PRIVATE PROJECT_ROOT_DIR="${CMAKE_SOURCE_DIR}")
 
-# Link di base valido per entrambi i sistemi
-target_link_libraries(${PROJECT_NAME} PRIVATE CoreImGui Eigen SDL3::SDL3-static)
+
+# Includiamo le directory dei sorgenti e gli header di STB
+target_include_directories(${PROJECT_NAME} PRIVATE 
+    src
+    ${STB_INCLUDE_DIR}
+)
+
+# Link di base valido per entrambi i sistemi (SDL3, ImGui, Eigen + nuove librerie)
+target_link_libraries(${PROJECT_NAME} PRIVATE 
+    CoreImGui 
+    Eigen 
+    SDL3::SDL3-static
+    CURL::libcurl
+    nlohmann_json::nlohmann_json
+)
 
 # -------------------------------------------------------------------
 # DIPENDENZE DI SISTEMA SPECIFICHE PER OS

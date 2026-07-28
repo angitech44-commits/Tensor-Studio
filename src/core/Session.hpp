@@ -2,12 +2,12 @@
 #include <string>
 #include <vector>
 #include "DriverEntry.hpp"
-#include "TrackConfig.hpp"
+#include "Track.hpp"
 
 struct Session {
     char sessionName[128];
     char sessionDate[64];
-    TrackConfig selectedTrack;
+    Track selectedTrack;
     std::vector<DriverEntry> drivers;
 
     Session();

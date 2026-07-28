@@ -86,11 +86,26 @@ CMakeFiles/TensorStudio.dir/src/core/Session.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TensorStudio.dir/src/core/Session.cpp.s"
 	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\angit\Documents\TensorStudio\src\core\Session.cpp -o CMakeFiles\TensorStudio.dir\src\core\Session.cpp.s
 
+CMakeFiles/TensorStudio.dir/src/io/TrackSerializer.cpp.obj: CMakeFiles/TensorStudio.dir/flags.make
+CMakeFiles/TensorStudio.dir/src/io/TrackSerializer.cpp.obj: CMakeFiles/TensorStudio.dir/includes_CXX.rsp
+CMakeFiles/TensorStudio.dir/src/io/TrackSerializer.cpp.obj: C:/Users/angit/Documents/TensorStudio/src/io/TrackSerializer.cpp
+CMakeFiles/TensorStudio.dir/src/io/TrackSerializer.cpp.obj: CMakeFiles/TensorStudio.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\angit\Documents\TensorStudio\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/TensorStudio.dir/src/io/TrackSerializer.cpp.obj"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TensorStudio.dir/src/io/TrackSerializer.cpp.obj -MF CMakeFiles\TensorStudio.dir\src\io\TrackSerializer.cpp.obj.d -o CMakeFiles\TensorStudio.dir\src\io\TrackSerializer.cpp.obj -c C:\Users\angit\Documents\TensorStudio\src\io\TrackSerializer.cpp
+
+CMakeFiles/TensorStudio.dir/src/io/TrackSerializer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/TensorStudio.dir/src/io/TrackSerializer.cpp.i"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\angit\Documents\TensorStudio\src\io\TrackSerializer.cpp > CMakeFiles\TensorStudio.dir\src\io\TrackSerializer.cpp.i
+
+CMakeFiles/TensorStudio.dir/src/io/TrackSerializer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TensorStudio.dir/src/io/TrackSerializer.cpp.s"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\angit\Documents\TensorStudio\src\io\TrackSerializer.cpp -o CMakeFiles\TensorStudio.dir\src\io\TrackSerializer.cpp.s
+
 CMakeFiles/TensorStudio.dir/src/main.cpp.obj: CMakeFiles/TensorStudio.dir/flags.make
 CMakeFiles/TensorStudio.dir/src/main.cpp.obj: CMakeFiles/TensorStudio.dir/includes_CXX.rsp
 CMakeFiles/TensorStudio.dir/src/main.cpp.obj: C:/Users/angit/Documents/TensorStudio/src/main.cpp
 CMakeFiles/TensorStudio.dir/src/main.cpp.obj: CMakeFiles/TensorStudio.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\angit\Documents\TensorStudio\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/TensorStudio.dir/src/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\angit\Documents\TensorStudio\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/TensorStudio.dir/src/main.cpp.obj"
 	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TensorStudio.dir/src/main.cpp.obj -MF CMakeFiles\TensorStudio.dir\src\main.cpp.obj.d -o CMakeFiles\TensorStudio.dir\src\main.cpp.obj -c C:\Users\angit\Documents\TensorStudio\src\main.cpp
 
 CMakeFiles/TensorStudio.dir/src/main.cpp.i: cmake_force
@@ -105,7 +120,7 @@ CMakeFiles/TensorStudio.dir/src/ui/Application.cpp.obj: CMakeFiles/TensorStudio.
 CMakeFiles/TensorStudio.dir/src/ui/Application.cpp.obj: CMakeFiles/TensorStudio.dir/includes_CXX.rsp
 CMakeFiles/TensorStudio.dir/src/ui/Application.cpp.obj: C:/Users/angit/Documents/TensorStudio/src/ui/Application.cpp
 CMakeFiles/TensorStudio.dir/src/ui/Application.cpp.obj: CMakeFiles/TensorStudio.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\angit\Documents\TensorStudio\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/TensorStudio.dir/src/ui/Application.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\angit\Documents\TensorStudio\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/TensorStudio.dir/src/ui/Application.cpp.obj"
 	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TensorStudio.dir/src/ui/Application.cpp.obj -MF CMakeFiles\TensorStudio.dir\src\ui\Application.cpp.obj.d -o CMakeFiles\TensorStudio.dir\src\ui\Application.cpp.obj -c C:\Users\angit\Documents\TensorStudio\src\ui\Application.cpp
 
 CMakeFiles/TensorStudio.dir/src/ui/Application.cpp.i: cmake_force
@@ -116,11 +131,41 @@ CMakeFiles/TensorStudio.dir/src/ui/Application.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TensorStudio.dir/src/ui/Application.cpp.s"
 	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\angit\Documents\TensorStudio\src\ui\Application.cpp -o CMakeFiles\TensorStudio.dir\src\ui\Application.cpp.s
 
+CMakeFiles/TensorStudio.dir/src/ui/components/TrackManagerModal.cpp.obj: CMakeFiles/TensorStudio.dir/flags.make
+CMakeFiles/TensorStudio.dir/src/ui/components/TrackManagerModal.cpp.obj: CMakeFiles/TensorStudio.dir/includes_CXX.rsp
+CMakeFiles/TensorStudio.dir/src/ui/components/TrackManagerModal.cpp.obj: C:/Users/angit/Documents/TensorStudio/src/ui/components/TrackManagerModal.cpp
+CMakeFiles/TensorStudio.dir/src/ui/components/TrackManagerModal.cpp.obj: CMakeFiles/TensorStudio.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\angit\Documents\TensorStudio\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/TensorStudio.dir/src/ui/components/TrackManagerModal.cpp.obj"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TensorStudio.dir/src/ui/components/TrackManagerModal.cpp.obj -MF CMakeFiles\TensorStudio.dir\src\ui\components\TrackManagerModal.cpp.obj.d -o CMakeFiles\TensorStudio.dir\src\ui\components\TrackManagerModal.cpp.obj -c C:\Users\angit\Documents\TensorStudio\src\ui\components\TrackManagerModal.cpp
+
+CMakeFiles/TensorStudio.dir/src/ui/components/TrackManagerModal.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/TensorStudio.dir/src/ui/components/TrackManagerModal.cpp.i"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\angit\Documents\TensorStudio\src\ui\components\TrackManagerModal.cpp > CMakeFiles\TensorStudio.dir\src\ui\components\TrackManagerModal.cpp.i
+
+CMakeFiles/TensorStudio.dir/src/ui/components/TrackManagerModal.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TensorStudio.dir/src/ui/components/TrackManagerModal.cpp.s"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\angit\Documents\TensorStudio\src\ui\components\TrackManagerModal.cpp -o CMakeFiles\TensorStudio.dir\src\ui\components\TrackManagerModal.cpp.s
+
+CMakeFiles/TensorStudio.dir/src/ui/components/TrackMapView.cpp.obj: CMakeFiles/TensorStudio.dir/flags.make
+CMakeFiles/TensorStudio.dir/src/ui/components/TrackMapView.cpp.obj: CMakeFiles/TensorStudio.dir/includes_CXX.rsp
+CMakeFiles/TensorStudio.dir/src/ui/components/TrackMapView.cpp.obj: C:/Users/angit/Documents/TensorStudio/src/ui/components/TrackMapView.cpp
+CMakeFiles/TensorStudio.dir/src/ui/components/TrackMapView.cpp.obj: CMakeFiles/TensorStudio.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\angit\Documents\TensorStudio\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/TensorStudio.dir/src/ui/components/TrackMapView.cpp.obj"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TensorStudio.dir/src/ui/components/TrackMapView.cpp.obj -MF CMakeFiles\TensorStudio.dir\src\ui\components\TrackMapView.cpp.obj.d -o CMakeFiles\TensorStudio.dir\src\ui\components\TrackMapView.cpp.obj -c C:\Users\angit\Documents\TensorStudio\src\ui\components\TrackMapView.cpp
+
+CMakeFiles/TensorStudio.dir/src/ui/components/TrackMapView.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/TensorStudio.dir/src/ui/components/TrackMapView.cpp.i"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\angit\Documents\TensorStudio\src\ui\components\TrackMapView.cpp > CMakeFiles\TensorStudio.dir\src\ui\components\TrackMapView.cpp.i
+
+CMakeFiles/TensorStudio.dir/src/ui/components/TrackMapView.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TensorStudio.dir/src/ui/components/TrackMapView.cpp.s"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\angit\Documents\TensorStudio\src\ui\components\TrackMapView.cpp -o CMakeFiles\TensorStudio.dir\src\ui\components\TrackMapView.cpp.s
+
 CMakeFiles/TensorStudio.dir/src/ui/views/AnalysisWorkspaceView.cpp.obj: CMakeFiles/TensorStudio.dir/flags.make
 CMakeFiles/TensorStudio.dir/src/ui/views/AnalysisWorkspaceView.cpp.obj: CMakeFiles/TensorStudio.dir/includes_CXX.rsp
 CMakeFiles/TensorStudio.dir/src/ui/views/AnalysisWorkspaceView.cpp.obj: C:/Users/angit/Documents/TensorStudio/src/ui/views/AnalysisWorkspaceView.cpp
 CMakeFiles/TensorStudio.dir/src/ui/views/AnalysisWorkspaceView.cpp.obj: CMakeFiles/TensorStudio.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\angit\Documents\TensorStudio\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/TensorStudio.dir/src/ui/views/AnalysisWorkspaceView.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\angit\Documents\TensorStudio\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/TensorStudio.dir/src/ui/views/AnalysisWorkspaceView.cpp.obj"
 	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TensorStudio.dir/src/ui/views/AnalysisWorkspaceView.cpp.obj -MF CMakeFiles\TensorStudio.dir\src\ui\views\AnalysisWorkspaceView.cpp.obj.d -o CMakeFiles\TensorStudio.dir\src\ui\views\AnalysisWorkspaceView.cpp.obj -c C:\Users\angit\Documents\TensorStudio\src\ui\views\AnalysisWorkspaceView.cpp
 
 CMakeFiles/TensorStudio.dir/src/ui/views/AnalysisWorkspaceView.cpp.i: cmake_force
@@ -135,7 +180,7 @@ CMakeFiles/TensorStudio.dir/src/ui/views/LiveDashboardView.cpp.obj: CMakeFiles/T
 CMakeFiles/TensorStudio.dir/src/ui/views/LiveDashboardView.cpp.obj: CMakeFiles/TensorStudio.dir/includes_CXX.rsp
 CMakeFiles/TensorStudio.dir/src/ui/views/LiveDashboardView.cpp.obj: C:/Users/angit/Documents/TensorStudio/src/ui/views/LiveDashboardView.cpp
 CMakeFiles/TensorStudio.dir/src/ui/views/LiveDashboardView.cpp.obj: CMakeFiles/TensorStudio.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\angit\Documents\TensorStudio\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/TensorStudio.dir/src/ui/views/LiveDashboardView.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\angit\Documents\TensorStudio\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/TensorStudio.dir/src/ui/views/LiveDashboardView.cpp.obj"
 	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TensorStudio.dir/src/ui/views/LiveDashboardView.cpp.obj -MF CMakeFiles\TensorStudio.dir\src\ui\views\LiveDashboardView.cpp.obj.d -o CMakeFiles\TensorStudio.dir\src\ui\views\LiveDashboardView.cpp.obj -c C:\Users\angit\Documents\TensorStudio\src\ui\views\LiveDashboardView.cpp
 
 CMakeFiles/TensorStudio.dir/src/ui/views/LiveDashboardView.cpp.i: cmake_force
@@ -150,7 +195,7 @@ CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupView.cpp.obj: CMakeFiles/Te
 CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupView.cpp.obj: CMakeFiles/TensorStudio.dir/includes_CXX.rsp
 CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupView.cpp.obj: C:/Users/angit/Documents/TensorStudio/src/ui/views/SessionSetupView.cpp
 CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupView.cpp.obj: CMakeFiles/TensorStudio.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\angit\Documents\TensorStudio\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupView.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\angit\Documents\TensorStudio\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupView.cpp.obj"
 	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupView.cpp.obj -MF CMakeFiles\TensorStudio.dir\src\ui\views\SessionSetupView.cpp.obj.d -o CMakeFiles\TensorStudio.dir\src\ui\views\SessionSetupView.cpp.obj -c C:\Users\angit\Documents\TensorStudio\src\ui\views\SessionSetupView.cpp
 
 CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupView.cpp.i: cmake_force
@@ -161,33 +206,75 @@ CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupView.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupView.cpp.s"
 	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\angit\Documents\TensorStudio\src\ui\views\SessionSetupView.cpp -o CMakeFiles\TensorStudio.dir\src\ui\views\SessionSetupView.cpp.s
 
+CMakeFiles/TensorStudio.dir/src/utils/GeoMath.cpp.obj: CMakeFiles/TensorStudio.dir/flags.make
+CMakeFiles/TensorStudio.dir/src/utils/GeoMath.cpp.obj: CMakeFiles/TensorStudio.dir/includes_CXX.rsp
+CMakeFiles/TensorStudio.dir/src/utils/GeoMath.cpp.obj: C:/Users/angit/Documents/TensorStudio/src/utils/GeoMath.cpp
+CMakeFiles/TensorStudio.dir/src/utils/GeoMath.cpp.obj: CMakeFiles/TensorStudio.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\angit\Documents\TensorStudio\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/TensorStudio.dir/src/utils/GeoMath.cpp.obj"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TensorStudio.dir/src/utils/GeoMath.cpp.obj -MF CMakeFiles\TensorStudio.dir\src\utils\GeoMath.cpp.obj.d -o CMakeFiles\TensorStudio.dir\src\utils\GeoMath.cpp.obj -c C:\Users\angit\Documents\TensorStudio\src\utils\GeoMath.cpp
+
+CMakeFiles/TensorStudio.dir/src/utils/GeoMath.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/TensorStudio.dir/src/utils/GeoMath.cpp.i"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\angit\Documents\TensorStudio\src\utils\GeoMath.cpp > CMakeFiles\TensorStudio.dir\src\utils\GeoMath.cpp.i
+
+CMakeFiles/TensorStudio.dir/src/utils/GeoMath.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TensorStudio.dir/src/utils/GeoMath.cpp.s"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\angit\Documents\TensorStudio\src\utils\GeoMath.cpp -o CMakeFiles\TensorStudio.dir\src\utils\GeoMath.cpp.s
+
+CMakeFiles/TensorStudio.dir/src/utils/TileManager.cpp.obj: CMakeFiles/TensorStudio.dir/flags.make
+CMakeFiles/TensorStudio.dir/src/utils/TileManager.cpp.obj: CMakeFiles/TensorStudio.dir/includes_CXX.rsp
+CMakeFiles/TensorStudio.dir/src/utils/TileManager.cpp.obj: C:/Users/angit/Documents/TensorStudio/src/utils/TileManager.cpp
+CMakeFiles/TensorStudio.dir/src/utils/TileManager.cpp.obj: CMakeFiles/TensorStudio.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\angit\Documents\TensorStudio\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/TensorStudio.dir/src/utils/TileManager.cpp.obj"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TensorStudio.dir/src/utils/TileManager.cpp.obj -MF CMakeFiles\TensorStudio.dir\src\utils\TileManager.cpp.obj.d -o CMakeFiles\TensorStudio.dir\src\utils\TileManager.cpp.obj -c C:\Users\angit\Documents\TensorStudio\src\utils\TileManager.cpp
+
+CMakeFiles/TensorStudio.dir/src/utils/TileManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/TensorStudio.dir/src/utils/TileManager.cpp.i"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\angit\Documents\TensorStudio\src\utils\TileManager.cpp > CMakeFiles\TensorStudio.dir\src\utils\TileManager.cpp.i
+
+CMakeFiles/TensorStudio.dir/src/utils/TileManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/TensorStudio.dir/src/utils/TileManager.cpp.s"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\angit\Documents\TensorStudio\src\utils\TileManager.cpp -o CMakeFiles\TensorStudio.dir\src\utils\TileManager.cpp.s
+
 # Object files for target TensorStudio
 TensorStudio_OBJECTS = \
 "CMakeFiles/TensorStudio.dir/src/core/Session.cpp.obj" \
+"CMakeFiles/TensorStudio.dir/src/io/TrackSerializer.cpp.obj" \
 "CMakeFiles/TensorStudio.dir/src/main.cpp.obj" \
 "CMakeFiles/TensorStudio.dir/src/ui/Application.cpp.obj" \
+"CMakeFiles/TensorStudio.dir/src/ui/components/TrackManagerModal.cpp.obj" \
+"CMakeFiles/TensorStudio.dir/src/ui/components/TrackMapView.cpp.obj" \
 "CMakeFiles/TensorStudio.dir/src/ui/views/AnalysisWorkspaceView.cpp.obj" \
 "CMakeFiles/TensorStudio.dir/src/ui/views/LiveDashboardView.cpp.obj" \
-"CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupView.cpp.obj"
+"CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupView.cpp.obj" \
+"CMakeFiles/TensorStudio.dir/src/utils/GeoMath.cpp.obj" \
+"CMakeFiles/TensorStudio.dir/src/utils/TileManager.cpp.obj"
 
 # External object files for target TensorStudio
 TensorStudio_EXTERNAL_OBJECTS =
 
 TensorStudio.exe: CMakeFiles/TensorStudio.dir/src/core/Session.cpp.obj
+TensorStudio.exe: CMakeFiles/TensorStudio.dir/src/io/TrackSerializer.cpp.obj
 TensorStudio.exe: CMakeFiles/TensorStudio.dir/src/main.cpp.obj
 TensorStudio.exe: CMakeFiles/TensorStudio.dir/src/ui/Application.cpp.obj
+TensorStudio.exe: CMakeFiles/TensorStudio.dir/src/ui/components/TrackManagerModal.cpp.obj
+TensorStudio.exe: CMakeFiles/TensorStudio.dir/src/ui/components/TrackMapView.cpp.obj
 TensorStudio.exe: CMakeFiles/TensorStudio.dir/src/ui/views/AnalysisWorkspaceView.cpp.obj
 TensorStudio.exe: CMakeFiles/TensorStudio.dir/src/ui/views/LiveDashboardView.cpp.obj
 TensorStudio.exe: CMakeFiles/TensorStudio.dir/src/ui/views/SessionSetupView.cpp.obj
+TensorStudio.exe: CMakeFiles/TensorStudio.dir/src/utils/GeoMath.cpp.obj
+TensorStudio.exe: CMakeFiles/TensorStudio.dir/src/utils/TileManager.cpp.obj
 TensorStudio.exe: CMakeFiles/TensorStudio.dir/build.make
-TensorStudio.exe: external/raylib/raylib/libraylib.a
-TensorStudio.exe: librlImGui.a
-TensorStudio.exe: external/raylib/raylib/libraylib.a
+TensorStudio.exe: libCoreImGui.a
+TensorStudio.exe: external/sdl/libSDL3.a
+TensorStudio.exe: vcpkg_installed/x64-mingw-static/debug/lib/libcurl-d.a
+TensorStudio.exe: vcpkg_installed/x64-mingw-static/lib/libzs.a
 TensorStudio.exe: CMakeFiles/TensorStudio.dir/linkLibs.rsp
 TensorStudio.exe: CMakeFiles/TensorStudio.dir/objects1.rsp
 TensorStudio.exe: CMakeFiles/TensorStudio.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\angit\Documents\TensorStudio\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable TensorStudio.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\angit\Documents\TensorStudio\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable TensorStudio.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\TensorStudio.dir\link.txt --verbose=$(VERBOSE)
+	C:\Users\angit\Documents\TensorStudio\external\vcpkg\vcpkg.exe z-applocal --target-binary=C:/Users/angit/Documents/TensorStudio/build/TensorStudio.exe --installed-bin-dir=C:/Users/angit/Documents/TensorStudio/build/vcpkg_installed/x64-mingw-static/bin
 
 # Rule to build all files generated by this target.
 CMakeFiles/TensorStudio.dir/build: TensorStudio.exe
