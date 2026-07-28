@@ -3,12 +3,15 @@
 #include <fstream>
 #include <filesystem>
 #include <iostream>
+#include <cmath>
 
 using json = nlohmann::json;
 namespace fs = std::filesystem;
 
 void to_json(json& j, const GeoPoint& p) {
-    j = json{{"lat", p.lat}, {"lon", p.lon}};
+    // 7 decimali per le coordinate GPS (precisione ~1.1 cm)
+    auto roundGPS = [](double val) { return std::round(val * 10000000.0) / 10000000.0; };
+    j = json{{"lat", roundGPS(p.lat)}, {"lon", roundGPS(p.lon)}};
 }
 void from_json(const json& j, GeoPoint& p) {
     j.at("lat").get_to(p.lat);
@@ -16,7 +19,16 @@ void from_json(const json& j, GeoPoint& p) {
 }
 
 void to_json(json& j, const TrackFence& f) {
-    j = json{{"name", f.name}, {"type", static_cast<int>(f.type)}, {"p1", f.p1}, {"p2", f.p2}, {"heading", f.directionHeading}};
+    // Arrotondiamo anche l'heading per non generare stringhe decimali inutilmente lunghe nel JSON
+    auto roundHeading = [](double val) { return std::round(val * 10000000.0) / 10000000.0; };
+    
+    j = json{
+        {"name", f.name}, 
+        {"type", static_cast<int>(f.type)}, 
+        {"p1", f.p1}, // Passa automaticamente dal to_json(GeoPoint) arrotondando
+        {"p2", f.p2}, // Passa automaticamente dal to_json(GeoPoint) arrotondando
+        {"heading", roundHeading(f.directionHeading)}
+    };
 }
 void from_json(const json& j, TrackFence& f) {
     j.at("name").get_to(f.name);
@@ -30,7 +42,11 @@ bool TrackSerializer::SaveTrack(const Track& track, const std::string& filepath)
     try {
         json j;
         j["name"] = track.name;
-        j["length"] = track.lengthMeters;
+        
+        // 3 decimali per la lunghezza (precisione al millimetro)
+        auto roundLen = [](double val) { return std::round(val * 1000.0) / 1000.0; };
+        j["length"] = roundLen(track.lengthMeters);
+        
         j["fences"] = track.fences;
         j["limits"]["left"] = track.limits.leftBound;
         j["limits"]["right"] = track.limits.rightBound;

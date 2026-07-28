@@ -432,6 +432,30 @@ src/core/Session.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/core/Session.cpp.s
 .PHONY : src/core/Session.cpp.s
 
+src/io/DriverSerializer.obj: src/io/DriverSerializer.cpp.obj
+.PHONY : src/io/DriverSerializer.obj
+
+# target to build an object file
+src/io/DriverSerializer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/io/DriverSerializer.cpp.obj
+.PHONY : src/io/DriverSerializer.cpp.obj
+
+src/io/DriverSerializer.i: src/io/DriverSerializer.cpp.i
+.PHONY : src/io/DriverSerializer.i
+
+# target to preprocess a source file
+src/io/DriverSerializer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/io/DriverSerializer.cpp.i
+.PHONY : src/io/DriverSerializer.cpp.i
+
+src/io/DriverSerializer.s: src/io/DriverSerializer.cpp.s
+.PHONY : src/io/DriverSerializer.s
+
+# target to generate assembly for a file
+src/io/DriverSerializer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/io/DriverSerializer.cpp.s
+.PHONY : src/io/DriverSerializer.cpp.s
+
 src/io/TrackSerializer.obj: src/io/TrackSerializer.cpp.obj
 .PHONY : src/io/TrackSerializer.obj
 
@@ -503,6 +527,30 @@ src/ui/Application.s: src/ui/Application.cpp.s
 src/ui/Application.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/ui/Application.cpp.s
 .PHONY : src/ui/Application.cpp.s
+
+src/ui/components/DriverManagerModal.obj: src/ui/components/DriverManagerModal.cpp.obj
+.PHONY : src/ui/components/DriverManagerModal.obj
+
+# target to build an object file
+src/ui/components/DriverManagerModal.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/ui/components/DriverManagerModal.cpp.obj
+.PHONY : src/ui/components/DriverManagerModal.cpp.obj
+
+src/ui/components/DriverManagerModal.i: src/ui/components/DriverManagerModal.cpp.i
+.PHONY : src/ui/components/DriverManagerModal.i
+
+# target to preprocess a source file
+src/ui/components/DriverManagerModal.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/ui/components/DriverManagerModal.cpp.i
+.PHONY : src/ui/components/DriverManagerModal.cpp.i
+
+src/ui/components/DriverManagerModal.s: src/ui/components/DriverManagerModal.cpp.s
+.PHONY : src/ui/components/DriverManagerModal.s
+
+# target to generate assembly for a file
+src/ui/components/DriverManagerModal.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/ui/components/DriverManagerModal.cpp.s
+.PHONY : src/ui/components/DriverManagerModal.cpp.s
 
 src/ui/components/TrackManagerModal.obj: src/ui/components/TrackManagerModal.cpp.obj
 .PHONY : src/ui/components/TrackManagerModal.obj
@@ -717,6 +765,9 @@ help:
 	@echo ... src/core/Session.obj
 	@echo ... src/core/Session.i
 	@echo ... src/core/Session.s
+	@echo ... src/io/DriverSerializer.obj
+	@echo ... src/io/DriverSerializer.i
+	@echo ... src/io/DriverSerializer.s
 	@echo ... src/io/TrackSerializer.obj
 	@echo ... src/io/TrackSerializer.i
 	@echo ... src/io/TrackSerializer.s
@@ -726,6 +777,9 @@ help:
 	@echo ... src/ui/Application.obj
 	@echo ... src/ui/Application.i
 	@echo ... src/ui/Application.s
+	@echo ... src/ui/components/DriverManagerModal.obj
+	@echo ... src/ui/components/DriverManagerModal.i
+	@echo ... src/ui/components/DriverManagerModal.s
 	@echo ... src/ui/components/TrackManagerModal.obj
 	@echo ... src/ui/components/TrackManagerModal.i
 	@echo ... src/ui/components/TrackManagerModal.s

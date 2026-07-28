@@ -9,9 +9,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/angit/Documents/TensorStudio/src/core/Session.cpp" "CMakeFiles/TensorStudio.dir/src/core/Session.cpp.obj" "gcc" "CMakeFiles/TensorStudio.dir/src/core/Session.cpp.obj.d"
+  "C:/Users/angit/Documents/TensorStudio/src/io/DriverSerializer.cpp" "CMakeFiles/TensorStudio.dir/src/io/DriverSerializer.cpp.obj" "gcc" "CMakeFiles/TensorStudio.dir/src/io/DriverSerializer.cpp.obj.d"
   "C:/Users/angit/Documents/TensorStudio/src/io/TrackSerializer.cpp" "CMakeFiles/TensorStudio.dir/src/io/TrackSerializer.cpp.obj" "gcc" "CMakeFiles/TensorStudio.dir/src/io/TrackSerializer.cpp.obj.d"
   "C:/Users/angit/Documents/TensorStudio/src/main.cpp" "CMakeFiles/TensorStudio.dir/src/main.cpp.obj" "gcc" "CMakeFiles/TensorStudio.dir/src/main.cpp.obj.d"
   "C:/Users/angit/Documents/TensorStudio/src/ui/Application.cpp" "CMakeFiles/TensorStudio.dir/src/ui/Application.cpp.obj" "gcc" "CMakeFiles/TensorStudio.dir/src/ui/Application.cpp.obj.d"
+  "C:/Users/angit/Documents/TensorStudio/src/ui/components/DriverManagerModal.cpp" "CMakeFiles/TensorStudio.dir/src/ui/components/DriverManagerModal.cpp.obj" "gcc" "CMakeFiles/TensorStudio.dir/src/ui/components/DriverManagerModal.cpp.obj.d"
   "C:/Users/angit/Documents/TensorStudio/src/ui/components/TrackManagerModal.cpp" "CMakeFiles/TensorStudio.dir/src/ui/components/TrackManagerModal.cpp.obj" "gcc" "CMakeFiles/TensorStudio.dir/src/ui/components/TrackManagerModal.cpp.obj.d"
   "C:/Users/angit/Documents/TensorStudio/src/ui/components/TrackMapView.cpp" "CMakeFiles/TensorStudio.dir/src/ui/components/TrackMapView.cpp.obj" "gcc" "CMakeFiles/TensorStudio.dir/src/ui/components/TrackMapView.cpp.obj.d"
   "C:/Users/angit/Documents/TensorStudio/src/ui/views/AnalysisWorkspaceView.cpp" "CMakeFiles/TensorStudio.dir/src/ui/views/AnalysisWorkspaceView.cpp.obj" "gcc" "CMakeFiles/TensorStudio.dir/src/ui/views/AnalysisWorkspaceView.cpp.obj.d"

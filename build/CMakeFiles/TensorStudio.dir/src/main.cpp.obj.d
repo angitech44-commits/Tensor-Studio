@@ -369,6 +369,9 @@ CMakeFiles/TensorStudio.dir/src/main.cpp.obj: \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_queue.h \
  C:/msys64/ucrt64/include/c++/15.2.0/atomic \
  C:/msys64/ucrt64/include/c++/15.2.0/condition_variable \
+ C:/Users/angit/Documents/TensorStudio/src/ui/components/DriverManagerModal.hpp \
+ C:/Users/angit/Documents/TensorStudio/src/core/DriverProfile.hpp \
+ C:/Users/angit/Documents/TensorStudio/src/io/DriverSerializer.hpp \
  C:/msys64/ucrt64/include/c++/15.2.0/iostream \
  C:/msys64/ucrt64/include/c++/15.2.0/ostream \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/ostream.h \

@@ -37,6 +37,10 @@ private:
     bool showOverwritePopup = false;
     bool showDeletePopup = false;
 
+    bool isTrackModified = false;
+    bool showUnsavedChangesPopup = false;
+    std::string pendingTrackLoad;
+
     enum class DraggedPointType { None, LeftBound, RightBound, FenceP1, FenceP2 };
     DraggedPointType draggedPointType = DraggedPointType::None;
     int draggedPointIndex = -1;
@@ -50,7 +54,6 @@ private:
     char searchBuffer[128] = "";
     std::vector<Track> trackHistory;
 
-    // --- NUOVI HELPER PER SNELLIRE IL CODICE ---
     bool needsMapCentering = false;
     std::string GetUniqueTrackName(const std::string& baseName);
 

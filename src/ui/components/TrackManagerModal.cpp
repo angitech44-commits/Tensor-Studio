@@ -60,16 +60,30 @@ void TrackManagerModal::Render(SDL_Renderer* renderer) {
     
     // Calcoliamo la dimensione sottraendo il margine scalato
     ImVec2 modalSize = ImVec2(viewport->Size.x - margin, viewport->Size.y - margin);
-    
-    // Anche i limiti minimi devono tenere conto della scala
-    modalSize.x = std::max(modalSize.x, 800.0f * scale);
-    modalSize.y = std::max(modalSize.y, 600.0f * scale);
 
     ImGui::SetNextWindowPos(center, ImGuiCond_Appearing, ImVec2(0.5f, 0.5f));
-    ImGui::SetNextWindowSize(modalSize, ImGuiCond_Appearing);
+    ImGui::SetNextWindowSize(modalSize, ImGuiCond_Always);
 
-    if (ImGui::BeginPopupModal("Track Manager", &isOpen, ImGuiWindowFlags_NoSavedSettings)) {
-        float scale = ImGui::GetIO().FontGlobalScale;
+    bool keepOpen = true; 
+
+    // Separiamo la lettura dello stato dal blocco if per evitare che il codice venga saltato alla chiusura
+    bool isModalRendering = ImGui::BeginPopupModal("Track Manager", &keepOpen, ImGuiWindowFlags_NoSavedSettings | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove);
+        
+    // Intercettiamo il click sulla X (keepOpen diventa false) prima e a prescindere dal rendering
+    if (!keepOpen) {
+        if (isTrackActive && isTrackModified) {
+            // Riapriamo forzatamente il Track Manager e facciamo scattare il popup
+            ImGui::OpenPopup("Track Manager"); 
+            showUnsavedChangesPopup = true;
+            pendingTrackLoad = "##CLOSE_MANAGER##";
+        } else {
+            // Pista pulita: chiudiamo la nostra variabile di stato
+            isOpen = false;
+        }
+    }
+
+    // Se il popup è aperto, disegniamo il contenuto
+    if (isModalRendering) {
         ImVec2 avail = ImGui::GetContentRegionAvail();
         
         float leftColWidth = 220.0f * scale;
@@ -96,6 +110,10 @@ void TrackManagerModal::Render(SDL_Renderer* renderer) {
             }
             ImGui::EndChild();
         }
+        if (!isOpen) {
+            ImGui::CloseCurrentPopup(); // Chiude forzatamente il Track Manager!
+        }
+
         ImGui::EndPopup();
     }
 }
@@ -280,8 +298,14 @@ void TrackManagerModal::HandleMapInput(ImVec2 canvasCenter, bool isMapHovered) {
                                 }
                                 newFence.p1.lat = tempFenceLat; newFence.p1.lon = tempFenceLon;
                                 newFence.p2.lat = clickLat; newFence.p2.lon = clickLon;
-                                double dx = clickLon - tempFenceLon; double dy = clickLat - tempFenceLat;
+                                
+                                // --- FIX COMPENSAZIONE LATITUDINE CREAZIONE RECINZIONE ---
+                                double latCenterRad = tempFenceLat * M_PI / 180.0;
+                                double dx = (clickLon - tempFenceLon) * std::cos(latCenterRad);
+                                double dy = clickLat - tempFenceLat;
                                 newFence.directionHeading = std::atan2(dy, dx) + (M_PI / 2.0);
+                                // ---------------------------------------------------------
+                                
                                 activeTrack.fences.push_back(newFence);
                                 isPlacingFence = false;
                             }
@@ -318,8 +342,13 @@ void TrackManagerModal::HandleMapInput(ImVec2 canvasCenter, bool isMapHovered) {
                 auto& f = activeTrack.fences[draggedPointIndex];
                 if (draggedPointType == DraggedPointType::FenceP1) f.p1 = {clickLat, clickLon};
                 else f.p2 = {clickLat, clickLon};
-                double dx = f.p2.lon - f.p1.lon; double dy = f.p2.lat - f.p1.lat;
+                
+                // --- FIX COMPENSAZIONE LATITUDINE TRASCINAMENTO RECINZIONE ---
+                double latCenterRad = f.p1.lat * M_PI / 180.0;
+                double dx = (f.p2.lon - f.p1.lon) * std::cos(latCenterRad); 
+                double dy = f.p2.lat - f.p1.lat;
                 f.directionHeading = std::atan2(dy, dx) + (M_PI / 2.0);
+                // -------------------------------------------------------------
             }
         }
 
@@ -461,13 +490,19 @@ void TrackManagerModal::RenderLibraryColumn() {
 
             bool isSelected = (currentFileName == tName);
             if (ImGui::Selectable(tName.c_str(), isSelected)) {
-                currentFileName = tName;
-                isTrackActive = true;
-                isPlacingFence = false;
-                std::string path = std::string(PROJECT_ROOT_DIR) + "/assets/tracks/" + tName + ".json";
-                TrackSerializer::LoadTrack(path, activeTrack);
-                
-                needsMapCentering = true; // Chiediamo l'auto-centraggio
+                if (isTrackActive && isTrackModified && currentFileName != tName) {
+                    // Blocca il caricamento e apri il popup
+                    showUnsavedChangesPopup = true;
+                    pendingTrackLoad = tName; 
+                } else if (currentFileName != tName) { // Carica normalmente
+                    currentFileName = tName;
+                    isTrackActive = true;
+                    isPlacingFence = false;
+                    isTrackModified = false; // Reset
+                    std::string path = std::string(PROJECT_ROOT_DIR) + "/assets/tracks/" + tName + ".json";
+                    TrackSerializer::LoadTrack(path, activeTrack);
+                    needsMapCentering = true;
+                }
             }
         }
     }
@@ -475,12 +510,19 @@ void TrackManagerModal::RenderLibraryColumn() {
 
     ImGui::Separator();
     if (ImGui::Button("Create New", ImVec2(-1, 0))) {
-        activeTrack = Track();
-        activeTrack.name = GetUniqueTrackName("NewTrack"); // Usa il nuovo helper
-        currentFileName = "";
-        isTrackActive = true;
-        isPlacingFence = false;
-        trackHistory.clear(); 
+        if (isTrackActive && isTrackModified) {
+            // Usa una parola chiave speciale per riconoscere la creazione di una nuova pista
+            showUnsavedChangesPopup = true;
+            pendingTrackLoad = "##NEW_TRACK##";
+        } else {
+            activeTrack = Track();
+            activeTrack.name = GetUniqueTrackName("NewTrack");
+            currentFileName = "";
+            isTrackActive = true;
+            isPlacingFence = false;
+            isTrackModified = false; // Reset
+            trackHistory.clear(); 
+        }
     }
 }
 
@@ -501,7 +543,7 @@ void TrackManagerModal::RenderToolsColumn() {
         if (!extractedName.empty()) activeTrack.name = extractedName;
         else if (activeTrack.name.empty()) activeTrack.name = "ImportedTrack";
         
-        activeTrack.name = GetUniqueTrackName(activeTrack.name); // Usa il nuovo helper
+        activeTrack.name = GetUniqueTrackName(activeTrack.name); 
 
         std::string localPath = std::string(PROJECT_ROOT_DIR) + "/assets/tracks/" + activeTrack.name + ".json";
         TrackSerializer::SaveTrack(activeTrack, localPath);
@@ -509,6 +551,7 @@ void TrackManagerModal::RenderToolsColumn() {
         currentFileName = activeTrack.name;
         isTrackActive = true;
         isPlacingFence = false;
+        isTrackModified = false;
         RefreshTrackList(); 
         needsMapCentering = true;
     }
@@ -524,7 +567,107 @@ void TrackManagerModal::RenderToolsColumn() {
     char buf[64];
     memset(buf, 0, sizeof(buf));
     strncpy(buf, activeTrack.name.c_str(), sizeof(buf) - 1);
-    if (ImGui::InputText("Name", buf, sizeof(buf))) activeTrack.name = buf;
+    if (ImGui::InputText("Name", buf, sizeof(buf))){
+        activeTrack.name = buf;
+        isTrackModified = true;
+    }
+
+    // --- CALCOLO LUNGHEZZA PISTA ---
+    // Lambda per la formula di Haversine (calcola la distanza in metri tra due coordinate GPS)
+    auto calculateDistance = [](double lat1, double lon1, double lat2, double lon2) {
+        constexpr double R = 6371000.0; // Raggio della Terra in metri
+        double dLat = (lat2 - lat1) * M_PI / 180.0;
+        double dLon = (lon2 - lon1) * M_PI / 180.0;
+        double a = std::sin(dLat / 2) * std::sin(dLat / 2) +
+                   std::cos(lat1 * M_PI / 180.0) * std::cos(lat2 * M_PI / 180.0) *
+                   std::sin(dLon / 2) * std::sin(dLon / 2);
+        return R * 2 * std::atan2(std::sqrt(a), std::sqrt(1 - a));
+    };
+
+    double trackLength = 0.0;
+    
+    if (!activeTrack.limits.leftBound.empty() && !activeTrack.limits.rightBound.empty()) {
+        std::vector<std::pair<double, double>> centerLine;
+        
+        // Generazione della centerline
+        for (const auto& lPt : activeTrack.limits.leftBound) {
+            double minDist = std::numeric_limits<double>::max();
+            double bestLat = lPt.lat, bestLon = lPt.lon;
+            
+            for (const auto& rPt : activeTrack.limits.rightBound) {
+                // Distanza euclidea rapida per trovare il punto più vicino sul bordo opposto
+                double dist = std::hypot(lPt.lat - rPt.lat, lPt.lon - rPt.lon);
+                if (dist < minDist) {
+                    minDist = dist;
+                    bestLat = rPt.lat;
+                    bestLon = rPt.lon;
+                }
+            }
+            // Punto medio tra il bordo sinistro e il punto più vicino del bordo destro
+            centerLine.push_back({(lPt.lat + bestLat) / 2.0, (lPt.lon + bestLon) / 2.0});
+        }
+        
+        // Somma delle distanze lungo la centerline
+        for (size_t i = 1; i < centerLine.size(); ++i) {
+            trackLength += calculateDistance(centerLine[i-1].first, centerLine[i-1].second, centerLine[i].first, centerLine[i].second);
+        }
+        
+        // Se la pista è chiusa (circuito), calcoliamo anche l'ultimo segmento che chiude il loop
+        if (GeoMath::IsBoundClosed(activeTrack.limits.leftBound) && centerLine.size() > 2) {
+            trackLength += calculateDistance(centerLine.back().first, centerLine.back().second, centerLine.front().first, centerLine.front().second);
+        }
+    } else {
+        // Fallback: se l'utente ha disegnato un solo bordo, usiamo quello per dare una stima della lunghezza
+        const auto& bound = activeTrack.limits.leftBound.empty() ? activeTrack.limits.rightBound : activeTrack.limits.leftBound;
+        for (size_t i = 1; i < bound.size(); ++i) {
+            trackLength += calculateDistance(bound[i-1].lat, bound[i-1].lon, bound[i].lat, bound[i].lon);
+        }
+        if (GeoMath::IsBoundClosed(bound) && bound.size() > 2) {
+            trackLength += calculateDistance(bound.back().lat, bound.back().lon, bound.front().lat, bound.front().lon);
+        }
+    }
+
+    ImGui::Dummy(ImVec2(0, 2.0f));
+    ImGui::Text("Length:");
+    ImGui::SameLine();
+    ImGui::TextColored(ImVec4(0.4f, 0.8f, 1.0f, 1.0f), "%.0f m", trackLength);
+
+    activeTrack.lengthMeters = trackLength;
+    // -------------------------------
+
+    // Spostiamo la logica di salvataggio qui in alto per poterla richiamare con Ctrl+S
+    auto saveCurrentTrack = [&]() {
+        if (!currentFileName.empty() && currentFileName != activeTrack.name) {
+            std::string oldPath = std::string(PROJECT_ROOT_DIR) + "/assets/tracks/" + currentFileName + ".json";
+            if (std::filesystem::exists(oldPath)) std::filesystem::remove(oldPath);
+        }
+        std::string path = std::string(PROJECT_ROOT_DIR) + "/assets/tracks/" + activeTrack.name + ".json";
+        TrackSerializer::SaveTrack(activeTrack, path);
+        currentFileName = activeTrack.name;
+        isTrackModified = false;
+        RefreshTrackList();
+    };
+
+    // --- SHORTCUT DA TASTIERA ---
+    ImGuiIO& io = ImGui::GetIO();
+    // Eseguiamo gli shortcut SOLO se non stiamo scrivendo in un InputText (es. il nome della pista o la barra di ricerca)
+    if (!io.WantTextInput) {
+        if (io.KeyCtrl && ImGui::IsKeyPressed(ImGuiKey_Z, false)) PerformUndo();
+        if (io.KeyCtrl && ImGui::IsKeyPressed(ImGuiKey_S, false)) {
+            if (!activeTrack.name.empty()) {
+                bool nameExists = std::find(savedTracks.begin(), savedTracks.end(), activeTrack.name) != savedTracks.end();
+                if (nameExists && activeTrack.name != currentFileName) showOverwritePopup = true;
+                else saveCurrentTrack();
+            }
+        }
+        if (ImGui::IsKeyPressed(ImGuiKey_Escape, false)) currentMode = TrackEditorMode::ViewOnly;
+        if (ImGui::IsKeyPressed(ImGuiKey_1, false)) currentMode = TrackEditorMode::DrawLeftBound;
+        if (ImGui::IsKeyPressed(ImGuiKey_2, false)) currentMode = TrackEditorMode::DrawRightBound;
+        if (ImGui::IsKeyPressed(ImGuiKey_3, false)) currentMode = TrackEditorMode::PlaceFinishLine;
+        if (ImGui::IsKeyPressed(ImGuiKey_4, false)) currentMode = TrackEditorMode::PlaceSector;
+        if (ImGui::IsKeyPressed(ImGuiKey_5, false)) currentMode = TrackEditorMode::DeletePoint;
+    }
+    // ----------------------------
 
     ImGui::Dummy(ImVec2(0, 15.0f));
     ImGui::TextColored(ImVec4(0.7f, 0.9f, 0.7f, 1.0f), "TOOLS");
@@ -544,17 +687,6 @@ void TrackManagerModal::RenderToolsColumn() {
 
     ImGui::Dummy(ImVec2(0, ImGui::GetContentRegionAvail().y - 110.0f * ImGui::GetIO().FontGlobalScale));
     ImGui::Separator();
-
-    auto saveCurrentTrack = [&]() {
-        if (!currentFileName.empty() && currentFileName != activeTrack.name) {
-            std::string oldPath = std::string(PROJECT_ROOT_DIR) + "/assets/tracks/" + currentFileName + ".json";
-            if (std::filesystem::exists(oldPath)) std::filesystem::remove(oldPath);
-        }
-        std::string path = std::string(PROJECT_ROOT_DIR) + "/assets/tracks/" + activeTrack.name + ".json";
-        TrackSerializer::SaveTrack(activeTrack, path);
-        currentFileName = activeTrack.name;
-        RefreshTrackList();
-    };
     
     if (ImGui::Button("Save to Library", ImVec2(-1, 0))) {
         if (!activeTrack.name.empty()) {
@@ -566,14 +698,19 @@ void TrackManagerModal::RenderToolsColumn() {
 
     ImGui::Dummy(ImVec2(0, 5.0f));
     if (ImGui::Button("Import JSON...", ImVec2(-1, 0))) {
-        FileDialog::OpenFile(nullptr, [this](const std::string& path) {
-            if (!path.empty()) { std::lock_guard<std::mutex> lock(*dialogMutex); pendingImportPath = path; triggerImport = true; }
-        });
+        if (isTrackActive && isTrackModified) {
+            showUnsavedChangesPopup = true;
+            pendingTrackLoad = "##IMPORT_TRACK##";
+        } else {
+            FileDialog::OpenFile(nullptr, [this](const std::string& path) {
+                if (!path.empty()) { std::lock_guard<std::mutex> lock(*dialogMutex); pendingImportPath = path; triggerImport = true; }
+            });
+        }
     }
 
     if (ImGui::Button("Export JSON...", ImVec2(-1, 0))) {
         if (!activeTrack.name.empty()) {
-            std::string defaultExportName = activeTrack.name + ".json"; // Suggerisce il nome attuale
+            std::string defaultExportName = activeTrack.name + ".json"; 
             
             FileDialog::SaveFile(nullptr, defaultExportName, [this](const std::string& path) {
                 if (!path.empty()) { 
@@ -634,11 +771,62 @@ void TrackManagerModal::RenderToolsColumn() {
         if (ImGui::Button("Cancel", ImVec2(120, 0))) { showDeletePopup = false; ImGui::CloseCurrentPopup(); }
         ImGui::EndPopup();
     }
+
+    if (showUnsavedChangesPopup) ImGui::OpenPopup("Unsaved Changes");
+    if (ImGui::BeginPopupModal("Unsaved Changes", NULL, ImGuiWindowFlags_AlwaysAutoResize)) {
+        ImGui::Text("You have unsaved changes in the current track.\nIf you continue, these changes will be lost.");
+        ImGui::Separator();
+        
+        ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0.8f, 0.2f, 0.2f, 1.0f));
+        if (ImGui::Button("Discard Changes", ImVec2(140, 0))) {
+            if (pendingTrackLoad == "##NEW_TRACK##") {
+                activeTrack = Track();
+                activeTrack.name = GetUniqueTrackName("NewTrack");
+                currentFileName = "";
+                isTrackActive = true;
+                isPlacingFence = false;
+                isTrackModified = false;
+                trackHistory.clear();
+            } else if (pendingTrackLoad == "##IMPORT_TRACK##") {
+                FileDialog::OpenFile(nullptr, [this](const std::string& path) {
+                    if (!path.empty()) { std::lock_guard<std::mutex> lock(*dialogMutex); pendingImportPath = path; triggerImport = true; }
+                });
+            } else if (pendingTrackLoad == "##CLOSE_MANAGER##") {
+                if (!currentFileName.empty()) {
+                    std::string path = std::string(PROJECT_ROOT_DIR) + "/assets/tracks/" + currentFileName + ".json";
+                    TrackSerializer::LoadTrack(path, activeTrack);
+                } else {
+                    activeTrack = Track(); 
+                }
+                isTrackModified = false;
+                isOpen = false; 
+            } else {
+                currentFileName = pendingTrackLoad;
+                isTrackActive = true;
+                isPlacingFence = false;
+                isTrackModified = false;
+                std::string path = std::string(PROJECT_ROOT_DIR) + "/assets/tracks/" + pendingTrackLoad + ".json";
+                TrackSerializer::LoadTrack(path, activeTrack);
+                needsMapCentering = true;
+            }
+            showUnsavedChangesPopup = false;
+            ImGui::CloseCurrentPopup();
+        }
+        ImGui::PopStyleColor();
+        
+        ImGui::SameLine();
+        if (ImGui::Button("Cancel", ImVec2(120, 0))) { 
+            showUnsavedChangesPopup = false; 
+            ImGui::CloseCurrentPopup(); 
+        }
+        ImGui::EndPopup();
+    }
 }
 
 void TrackManagerModal::SaveStateForUndo() {
     trackHistory.push_back(activeTrack);
     if (trackHistory.size() > 50) trackHistory.erase(trackHistory.begin());
+    isTrackModified = true;
 }
 
 void TrackManagerModal::PerformUndo() {
