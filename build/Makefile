@@ -168,6 +168,30 @@ SDL3_test/fast:
 	$(MAKE) $(MAKESILENT) -f external\sdl\CMakeFiles\SDL3_test.dir\build.make external/sdl/CMakeFiles/SDL3_test.dir/build
 .PHONY : SDL3_test/fast
 
+external/imgui/backends/imgui_impl_opengl3.obj: external/imgui/backends/imgui_impl_opengl3.cpp.obj
+.PHONY : external/imgui/backends/imgui_impl_opengl3.obj
+
+# target to build an object file
+external/imgui/backends/imgui_impl_opengl3.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CoreImGui.dir\build.make CMakeFiles/CoreImGui.dir/external/imgui/backends/imgui_impl_opengl3.cpp.obj
+.PHONY : external/imgui/backends/imgui_impl_opengl3.cpp.obj
+
+external/imgui/backends/imgui_impl_opengl3.i: external/imgui/backends/imgui_impl_opengl3.cpp.i
+.PHONY : external/imgui/backends/imgui_impl_opengl3.i
+
+# target to preprocess a source file
+external/imgui/backends/imgui_impl_opengl3.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CoreImGui.dir\build.make CMakeFiles/CoreImGui.dir/external/imgui/backends/imgui_impl_opengl3.cpp.i
+.PHONY : external/imgui/backends/imgui_impl_opengl3.cpp.i
+
+external/imgui/backends/imgui_impl_opengl3.s: external/imgui/backends/imgui_impl_opengl3.cpp.s
+.PHONY : external/imgui/backends/imgui_impl_opengl3.s
+
+# target to generate assembly for a file
+external/imgui/backends/imgui_impl_opengl3.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CoreImGui.dir\build.make CMakeFiles/CoreImGui.dir/external/imgui/backends/imgui_impl_opengl3.cpp.s
+.PHONY : external/imgui/backends/imgui_impl_opengl3.cpp.s
+
 external/imgui/backends/imgui_impl_sdl3.obj: external/imgui/backends/imgui_impl_sdl3.cpp.obj
 .PHONY : external/imgui/backends/imgui_impl_sdl3.obj
 
@@ -408,6 +432,78 @@ external/implot/implot_items.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CoreImGui.dir\build.make CMakeFiles/CoreImGui.dir/external/implot/implot_items.cpp.s
 .PHONY : external/implot/implot_items.cpp.s
 
+src/analysis/LapSplitter.obj: src/analysis/LapSplitter.cpp.obj
+.PHONY : src/analysis/LapSplitter.obj
+
+# target to build an object file
+src/analysis/LapSplitter.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/analysis/LapSplitter.cpp.obj
+.PHONY : src/analysis/LapSplitter.cpp.obj
+
+src/analysis/LapSplitter.i: src/analysis/LapSplitter.cpp.i
+.PHONY : src/analysis/LapSplitter.i
+
+# target to preprocess a source file
+src/analysis/LapSplitter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/analysis/LapSplitter.cpp.i
+.PHONY : src/analysis/LapSplitter.cpp.i
+
+src/analysis/LapSplitter.s: src/analysis/LapSplitter.cpp.s
+.PHONY : src/analysis/LapSplitter.s
+
+# target to generate assembly for a file
+src/analysis/LapSplitter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/analysis/LapSplitter.cpp.s
+.PHONY : src/analysis/LapSplitter.cpp.s
+
+src/analysis/LiveProcessor.obj: src/analysis/LiveProcessor.cpp.obj
+.PHONY : src/analysis/LiveProcessor.obj
+
+# target to build an object file
+src/analysis/LiveProcessor.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/analysis/LiveProcessor.cpp.obj
+.PHONY : src/analysis/LiveProcessor.cpp.obj
+
+src/analysis/LiveProcessor.i: src/analysis/LiveProcessor.cpp.i
+.PHONY : src/analysis/LiveProcessor.i
+
+# target to preprocess a source file
+src/analysis/LiveProcessor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/analysis/LiveProcessor.cpp.i
+.PHONY : src/analysis/LiveProcessor.cpp.i
+
+src/analysis/LiveProcessor.s: src/analysis/LiveProcessor.cpp.s
+.PHONY : src/analysis/LiveProcessor.s
+
+# target to generate assembly for a file
+src/analysis/LiveProcessor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/analysis/LiveProcessor.cpp.s
+.PHONY : src/analysis/LiveProcessor.cpp.s
+
+src/analysis/SpatialResampler.obj: src/analysis/SpatialResampler.cpp.obj
+.PHONY : src/analysis/SpatialResampler.obj
+
+# target to build an object file
+src/analysis/SpatialResampler.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/analysis/SpatialResampler.cpp.obj
+.PHONY : src/analysis/SpatialResampler.cpp.obj
+
+src/analysis/SpatialResampler.i: src/analysis/SpatialResampler.cpp.i
+.PHONY : src/analysis/SpatialResampler.i
+
+# target to preprocess a source file
+src/analysis/SpatialResampler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/analysis/SpatialResampler.cpp.i
+.PHONY : src/analysis/SpatialResampler.cpp.i
+
+src/analysis/SpatialResampler.s: src/analysis/SpatialResampler.cpp.s
+.PHONY : src/analysis/SpatialResampler.s
+
+# target to generate assembly for a file
+src/analysis/SpatialResampler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/analysis/SpatialResampler.cpp.s
+.PHONY : src/analysis/SpatialResampler.cpp.s
+
 src/core/Session.obj: src/core/Session.cpp.obj
 .PHONY : src/core/Session.obj
 
@@ -456,6 +552,54 @@ src/io/DriverSerializer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/io/DriverSerializer.cpp.s
 .PHONY : src/io/DriverSerializer.cpp.s
 
+src/io/FileParser.obj: src/io/FileParser.cpp.obj
+.PHONY : src/io/FileParser.obj
+
+# target to build an object file
+src/io/FileParser.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/io/FileParser.cpp.obj
+.PHONY : src/io/FileParser.cpp.obj
+
+src/io/FileParser.i: src/io/FileParser.cpp.i
+.PHONY : src/io/FileParser.i
+
+# target to preprocess a source file
+src/io/FileParser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/io/FileParser.cpp.i
+.PHONY : src/io/FileParser.cpp.i
+
+src/io/FileParser.s: src/io/FileParser.cpp.s
+.PHONY : src/io/FileParser.s
+
+# target to generate assembly for a file
+src/io/FileParser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/io/FileParser.cpp.s
+.PHONY : src/io/FileParser.cpp.s
+
+src/io/SessionSerializer.obj: src/io/SessionSerializer.cpp.obj
+.PHONY : src/io/SessionSerializer.obj
+
+# target to build an object file
+src/io/SessionSerializer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/io/SessionSerializer.cpp.obj
+.PHONY : src/io/SessionSerializer.cpp.obj
+
+src/io/SessionSerializer.i: src/io/SessionSerializer.cpp.i
+.PHONY : src/io/SessionSerializer.i
+
+# target to preprocess a source file
+src/io/SessionSerializer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/io/SessionSerializer.cpp.i
+.PHONY : src/io/SessionSerializer.cpp.i
+
+src/io/SessionSerializer.s: src/io/SessionSerializer.cpp.s
+.PHONY : src/io/SessionSerializer.s
+
+# target to generate assembly for a file
+src/io/SessionSerializer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/io/SessionSerializer.cpp.s
+.PHONY : src/io/SessionSerializer.cpp.s
+
 src/io/TrackSerializer.obj: src/io/TrackSerializer.cpp.obj
 .PHONY : src/io/TrackSerializer.obj
 
@@ -479,6 +623,30 @@ src/io/TrackSerializer.s: src/io/TrackSerializer.cpp.s
 src/io/TrackSerializer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/io/TrackSerializer.cpp.s
 .PHONY : src/io/TrackSerializer.cpp.s
+
+src/io/UDPReceiver.obj: src/io/UDPReceiver.cpp.obj
+.PHONY : src/io/UDPReceiver.obj
+
+# target to build an object file
+src/io/UDPReceiver.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/io/UDPReceiver.cpp.obj
+.PHONY : src/io/UDPReceiver.cpp.obj
+
+src/io/UDPReceiver.i: src/io/UDPReceiver.cpp.i
+.PHONY : src/io/UDPReceiver.i
+
+# target to preprocess a source file
+src/io/UDPReceiver.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/io/UDPReceiver.cpp.i
+.PHONY : src/io/UDPReceiver.cpp.i
+
+src/io/UDPReceiver.s: src/io/UDPReceiver.cpp.s
+.PHONY : src/io/UDPReceiver.s
+
+# target to generate assembly for a file
+src/io/UDPReceiver.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/io/UDPReceiver.cpp.s
+.PHONY : src/io/UDPReceiver.cpp.s
 
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
@@ -552,6 +720,30 @@ src/ui/components/DriverManagerModal.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/ui/components/DriverManagerModal.cpp.s
 .PHONY : src/ui/components/DriverManagerModal.cpp.s
 
+src/ui/components/TelemetryImportModal.obj: src/ui/components/TelemetryImportModal.cpp.obj
+.PHONY : src/ui/components/TelemetryImportModal.obj
+
+# target to build an object file
+src/ui/components/TelemetryImportModal.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/ui/components/TelemetryImportModal.cpp.obj
+.PHONY : src/ui/components/TelemetryImportModal.cpp.obj
+
+src/ui/components/TelemetryImportModal.i: src/ui/components/TelemetryImportModal.cpp.i
+.PHONY : src/ui/components/TelemetryImportModal.i
+
+# target to preprocess a source file
+src/ui/components/TelemetryImportModal.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/ui/components/TelemetryImportModal.cpp.i
+.PHONY : src/ui/components/TelemetryImportModal.cpp.i
+
+src/ui/components/TelemetryImportModal.s: src/ui/components/TelemetryImportModal.cpp.s
+.PHONY : src/ui/components/TelemetryImportModal.s
+
+# target to generate assembly for a file
+src/ui/components/TelemetryImportModal.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/ui/components/TelemetryImportModal.cpp.s
+.PHONY : src/ui/components/TelemetryImportModal.cpp.s
+
 src/ui/components/TrackManagerModal.obj: src/ui/components/TrackManagerModal.cpp.obj
 .PHONY : src/ui/components/TrackManagerModal.obj
 
@@ -600,6 +792,30 @@ src/ui/components/TrackMapView.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/ui/components/TrackMapView.cpp.s
 .PHONY : src/ui/components/TrackMapView.cpp.s
 
+src/ui/layouts/LapComparisonLayout.obj: src/ui/layouts/LapComparisonLayout.cpp.obj
+.PHONY : src/ui/layouts/LapComparisonLayout.obj
+
+# target to build an object file
+src/ui/layouts/LapComparisonLayout.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/ui/layouts/LapComparisonLayout.cpp.obj
+.PHONY : src/ui/layouts/LapComparisonLayout.cpp.obj
+
+src/ui/layouts/LapComparisonLayout.i: src/ui/layouts/LapComparisonLayout.cpp.i
+.PHONY : src/ui/layouts/LapComparisonLayout.i
+
+# target to preprocess a source file
+src/ui/layouts/LapComparisonLayout.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/ui/layouts/LapComparisonLayout.cpp.i
+.PHONY : src/ui/layouts/LapComparisonLayout.cpp.i
+
+src/ui/layouts/LapComparisonLayout.s: src/ui/layouts/LapComparisonLayout.cpp.s
+.PHONY : src/ui/layouts/LapComparisonLayout.s
+
+# target to generate assembly for a file
+src/ui/layouts/LapComparisonLayout.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/ui/layouts/LapComparisonLayout.cpp.s
+.PHONY : src/ui/layouts/LapComparisonLayout.cpp.s
+
 src/ui/views/AnalysisWorkspaceView.obj: src/ui/views/AnalysisWorkspaceView.cpp.obj
 .PHONY : src/ui/views/AnalysisWorkspaceView.obj
 
@@ -623,6 +839,30 @@ src/ui/views/AnalysisWorkspaceView.s: src/ui/views/AnalysisWorkspaceView.cpp.s
 src/ui/views/AnalysisWorkspaceView.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/ui/views/AnalysisWorkspaceView.cpp.s
 .PHONY : src/ui/views/AnalysisWorkspaceView.cpp.s
+
+src/ui/views/DataWorksheetView.obj: src/ui/views/DataWorksheetView.cpp.obj
+.PHONY : src/ui/views/DataWorksheetView.obj
+
+# target to build an object file
+src/ui/views/DataWorksheetView.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/ui/views/DataWorksheetView.cpp.obj
+.PHONY : src/ui/views/DataWorksheetView.cpp.obj
+
+src/ui/views/DataWorksheetView.i: src/ui/views/DataWorksheetView.cpp.i
+.PHONY : src/ui/views/DataWorksheetView.i
+
+# target to preprocess a source file
+src/ui/views/DataWorksheetView.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/ui/views/DataWorksheetView.cpp.i
+.PHONY : src/ui/views/DataWorksheetView.cpp.i
+
+src/ui/views/DataWorksheetView.s: src/ui/views/DataWorksheetView.cpp.s
+.PHONY : src/ui/views/DataWorksheetView.s
+
+# target to generate assembly for a file
+src/ui/views/DataWorksheetView.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TensorStudio.dir\build.make CMakeFiles/TensorStudio.dir/src/ui/views/DataWorksheetView.cpp.s
+.PHONY : src/ui/views/DataWorksheetView.cpp.s
 
 src/ui/views/LiveDashboardView.obj: src/ui/views/LiveDashboardView.cpp.obj
 .PHONY : src/ui/views/LiveDashboardView.obj
@@ -732,6 +972,9 @@ help:
 	@echo ... SDL3-static
 	@echo ... SDL3_test
 	@echo ... TensorStudio
+	@echo ... external/imgui/backends/imgui_impl_opengl3.obj
+	@echo ... external/imgui/backends/imgui_impl_opengl3.i
+	@echo ... external/imgui/backends/imgui_impl_opengl3.s
 	@echo ... external/imgui/backends/imgui_impl_sdl3.obj
 	@echo ... external/imgui/backends/imgui_impl_sdl3.i
 	@echo ... external/imgui/backends/imgui_impl_sdl3.s
@@ -762,15 +1005,33 @@ help:
 	@echo ... external/implot/implot_items.obj
 	@echo ... external/implot/implot_items.i
 	@echo ... external/implot/implot_items.s
+	@echo ... src/analysis/LapSplitter.obj
+	@echo ... src/analysis/LapSplitter.i
+	@echo ... src/analysis/LapSplitter.s
+	@echo ... src/analysis/LiveProcessor.obj
+	@echo ... src/analysis/LiveProcessor.i
+	@echo ... src/analysis/LiveProcessor.s
+	@echo ... src/analysis/SpatialResampler.obj
+	@echo ... src/analysis/SpatialResampler.i
+	@echo ... src/analysis/SpatialResampler.s
 	@echo ... src/core/Session.obj
 	@echo ... src/core/Session.i
 	@echo ... src/core/Session.s
 	@echo ... src/io/DriverSerializer.obj
 	@echo ... src/io/DriverSerializer.i
 	@echo ... src/io/DriverSerializer.s
+	@echo ... src/io/FileParser.obj
+	@echo ... src/io/FileParser.i
+	@echo ... src/io/FileParser.s
+	@echo ... src/io/SessionSerializer.obj
+	@echo ... src/io/SessionSerializer.i
+	@echo ... src/io/SessionSerializer.s
 	@echo ... src/io/TrackSerializer.obj
 	@echo ... src/io/TrackSerializer.i
 	@echo ... src/io/TrackSerializer.s
+	@echo ... src/io/UDPReceiver.obj
+	@echo ... src/io/UDPReceiver.i
+	@echo ... src/io/UDPReceiver.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
@@ -780,15 +1041,24 @@ help:
 	@echo ... src/ui/components/DriverManagerModal.obj
 	@echo ... src/ui/components/DriverManagerModal.i
 	@echo ... src/ui/components/DriverManagerModal.s
+	@echo ... src/ui/components/TelemetryImportModal.obj
+	@echo ... src/ui/components/TelemetryImportModal.i
+	@echo ... src/ui/components/TelemetryImportModal.s
 	@echo ... src/ui/components/TrackManagerModal.obj
 	@echo ... src/ui/components/TrackManagerModal.i
 	@echo ... src/ui/components/TrackManagerModal.s
 	@echo ... src/ui/components/TrackMapView.obj
 	@echo ... src/ui/components/TrackMapView.i
 	@echo ... src/ui/components/TrackMapView.s
+	@echo ... src/ui/layouts/LapComparisonLayout.obj
+	@echo ... src/ui/layouts/LapComparisonLayout.i
+	@echo ... src/ui/layouts/LapComparisonLayout.s
 	@echo ... src/ui/views/AnalysisWorkspaceView.obj
 	@echo ... src/ui/views/AnalysisWorkspaceView.i
 	@echo ... src/ui/views/AnalysisWorkspaceView.s
+	@echo ... src/ui/views/DataWorksheetView.obj
+	@echo ... src/ui/views/DataWorksheetView.i
+	@echo ... src/ui/views/DataWorksheetView.s
 	@echo ... src/ui/views/LiveDashboardView.obj
 	@echo ... src/ui/views/LiveDashboardView.i
 	@echo ... src/ui/views/LiveDashboardView.s

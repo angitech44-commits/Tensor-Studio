@@ -28,7 +28,6 @@ void TrackMapView::RenderBaseMap(SDL_Renderer* renderer, ImVec2 canvasPos, ImVec
     drawList->AddRectFilled(canvasPos, ImVec2(canvasPos.x + canvasSize.x, canvasPos.y + canvasSize.y), IM_COL32(30, 30, 35, 255));
     tileManager->ProcessCompletedDownloads(renderer);
 
-    // IL FIX: Creiamo SEMPRE la hitbox per catturare il mouse, per QUALSIASI strumento
     ImGui::SetNextItemAllowOverlap(); 
     ImGui::InvisibleButton("##MapInteract", canvasSize);
     
@@ -38,7 +37,6 @@ void TrackMapView::RenderBaseMap(SDL_Renderer* renderer, ImVec2 canvasPos, ImVec
     if (outIsHovered && ImGui::IsMouseClicked(ImGuiMouseButton_Middle)) isMiddleDragging = true;
     if (!ImGui::IsMouseDown(ImGuiMouseButton_Middle)) isMiddleDragging = false;
 
-    // Se stiamo usando gli strumenti, blocchiamo il pan col tasto sinistro, ma lasciamo quello col tasto centrale
     bool isPanMMB = isMiddleDragging;
     bool isPanLMB = (allowPanZoom && outIsActive && ImGui::IsMouseDragging(ImGuiMouseButton_Left));
     bool isScrolling = (outIsHovered && ImGui::GetIO().MouseWheel != 0);
@@ -66,7 +64,8 @@ void TrackMapView::RenderBaseMap(SDL_Renderer* renderer, ImVec2 canvasPos, ImVec
 }
 
 void TrackMapView::RenderTiles(ImDrawList* drawList, ImVec2 canvasCenter, ImVec2 canvasSize) {
-    int max_esri_zoom = 19; 
+    // FIX: Fissato a 18 per forzare il fallback intelligente ovunque
+    int max_esri_zoom = 18; 
     int request_z = std::min((int)std::floor(mapZoom), max_esri_zoom); 
     
     double powZ = std::pow(2.0, request_z); 
@@ -107,18 +106,24 @@ void TrackMapView::RenderTiles(ImDrawList* drawList, ImVec2 canvasCenter, ImVec2
             bool canRequestTiles = (ImGui::GetTime() - lastMapInteractionTime) > 0.15f;
 
             TileKey keySat = {request_z, wrappedTx, ty, 0};
-            SDL_Texture* texSat = tileManager->GetTexture(keySat);
+            float u0 = 0.0f, v0 = 0.0f, u1 = 1.0f, v1 = 1.0f;
+            
+            void* texSat = tileManager->GetTextureWithFallback(keySat, 4, u0, v0, u1, v1);
+            
             if (texSat) {
-                drawList->AddImage((ImTextureID)(intptr_t)texSat, pMin, pMax);
+                drawList->AddImage((ImTextureID)texSat, pMin, pMax, ImVec2(u0, v0), ImVec2(u1, v1));
             } else {
                 if (canRequestTiles) tileManager->RequestTile(keySat);
-                drawList->AddRect(pMin, pMax, IM_COL32(50, 50, 60, 255));
+                drawList->AddRectFilled(pMin, pMax, IM_COL32(40, 40, 45, 255));
+                drawList->AddRect(pMin, pMax, IM_COL32(60, 60, 70, 255));
             }
 
             TileKey keyLabels = {request_z, wrappedTx, ty, 1};
-            SDL_Texture* texLabels = tileManager->GetTexture(keyLabels);
+            float lu0 = 0.0f, lv0 = 0.0f, lu1 = 1.0f, lv1 = 1.0f;
+            
+            void* texLabels = tileManager->GetTextureWithFallback(keyLabels, 4, lu0, lv0, lu1, lv1);
             if (texLabels) {
-                drawList->AddImage((ImTextureID)(intptr_t)texLabels, pMin, pMax);
+                drawList->AddImage((ImTextureID)texLabels, pMin, pMax, ImVec2(lu0, lv0), ImVec2(lu1, lv1));
             } else {
                 if (canRequestTiles) tileManager->RequestTile(keyLabels);
             }
@@ -134,5 +139,5 @@ void TrackMapView::RenderUIControls(ImVec2 canvasPos, ImVec2 canvasSize) {
     if (ImGui::Button("-", ImVec2(40, 40))) mapZoom = std::max(2.0f, mapZoom - 1.0f);
     
     ImGui::SetCursorScreenPos(ImVec2(canvasPos.x + 5, canvasPos.y + canvasSize.y - 20));
-    ImGui::TextDisabled("Imagery © Esri");
+    ImGui::TextColored(ImVec4(0.5f, 0.5f, 0.5f, 0.8f), "Imagery © Esri");
 }

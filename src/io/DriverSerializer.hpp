@@ -5,6 +5,7 @@
 
 class DriverSerializer {
 public:
+    static std::string GetDriversDirectory();
     static std::vector<std::string> GetAvailableDrivers();
     static bool LoadDriver(const std::string& filepath, DriverProfile& outDriver);
     static bool SaveDriver(const DriverProfile& driver, const std::string& filepath);

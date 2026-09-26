@@ -2,6 +2,7 @@
 #include <SDL3/SDL.h>
 #include <string>
 #include <functional>
+#include <vector>
 
 class FileDialog {
 public:
@@ -15,19 +16,20 @@ public:
         delete cb; // Pulizia heap
     }
 
-    // Passiamo nullptr come window, SDL3 lo aggancerà alla finestra principale automaticamente
-    static void OpenFile(SDL_Window* window, std::function<void(const std::string&)> onResult) {
+    // Aggiunto il parametro filters con i file JSON di default per non rompere il codice esistente
+    static void OpenFile(SDL_Window* window, std::function<void(const std::string&)> onResult, 
+                         const std::vector<SDL_DialogFileFilter>& filters = { { "JSON Files", "json" } }) {
         auto* cb = new std::function<void(const std::string&)>(std::move(onResult));
-        SDL_DialogFileFilter filters[1] = { { "JSON Files", "json" } };
-        SDL_ShowOpenFileDialog(DialogCallback, cb, window, filters, 1, nullptr, false);
+        
+        // Usiamo data() e size() del vector per passarli a SDL3
+        SDL_ShowOpenFileDialog(DialogCallback, cb, window, filters.data(), filters.size(), nullptr, false);
     }
 
-    static void SaveFile(SDL_Window* window, const std::string& defaultFileName, std::function<void(const std::string&)> onResult) {
+    static void SaveFile(SDL_Window* window, const std::string& defaultFileName, std::function<void(const std::string&)> onResult,
+                         const std::vector<SDL_DialogFileFilter>& filters = { { "JSON Files", "json" } }) {
         auto* cb = new std::function<void(const std::string&)>(std::move(onResult));
-        SDL_DialogFileFilter filters[1] = { { "JSON Files", "json" } };
         
-        // Passiamo defaultFileName come ultimo argomento a SDL_ShowSaveFileDialog
         const char* defaultPath = defaultFileName.empty() ? nullptr : defaultFileName.c_str();
-        SDL_ShowSaveFileDialog(DialogCallback, cb, window, filters, 1, defaultPath);
+        SDL_ShowSaveFileDialog(DialogCallback, cb, window, filters.data(), filters.size(), defaultPath);
     }
 };

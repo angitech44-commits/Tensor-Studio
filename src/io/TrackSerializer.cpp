@@ -4,12 +4,13 @@
 #include <filesystem>
 #include <iostream>
 #include <cmath>
+#include <SDL3/SDL.h> // Indispensabile per SDL_GetPrefPath
 
 using json = nlohmann::json;
 namespace fs = std::filesystem;
 
+// --- [JSON PARSERS INVARIATI] ---
 void to_json(json& j, const GeoPoint& p) {
-    // 7 decimali per le coordinate GPS (precisione ~1.1 cm)
     auto roundGPS = [](double val) { return std::round(val * 10000000.0) / 10000000.0; };
     j = json{{"lat", roundGPS(p.lat)}, {"lon", roundGPS(p.lon)}};
 }
@@ -19,14 +20,12 @@ void from_json(const json& j, GeoPoint& p) {
 }
 
 void to_json(json& j, const TrackFence& f) {
-    // Arrotondiamo anche l'heading per non generare stringhe decimali inutilmente lunghe nel JSON
     auto roundHeading = [](double val) { return std::round(val * 10000000.0) / 10000000.0; };
-    
     j = json{
         {"name", f.name}, 
         {"type", static_cast<int>(f.type)}, 
-        {"p1", f.p1}, // Passa automaticamente dal to_json(GeoPoint) arrotondando
-        {"p2", f.p2}, // Passa automaticamente dal to_json(GeoPoint) arrotondando
+        {"p1", f.p1}, 
+        {"p2", f.p2}, 
         {"heading", roundHeading(f.directionHeading)}
     };
 }
@@ -37,16 +36,38 @@ void from_json(const json& j, TrackFence& f) {
     j.at("p2").get_to(f.p2);
     j.at("heading").get_to(f.directionHeading);
 }
+// --------------------------------
+
+std::string TrackSerializer::GetTracksDirectory() {
+    // Chiede al sistema operativo una cartella per i dati
+    char* prefPath = SDL_GetPrefPath("TensorStudio", "Tracks");
+    std::string path = prefPath ? std::string(prefPath) : "./assets/tracks/";
+    if (prefPath) SDL_free(prefPath); // IMPORTANTE: liberare la memoria di SDL
+    
+    if (!fs::exists(path)) fs::create_directories(path);
+    return path;
+}
+
+std::vector<std::string> TrackSerializer::GetAvailableTracks() {
+    std::vector<std::string> tracks;
+    std::string fullPath = GetTracksDirectory();
+    
+    if (!fs::exists(fullPath)) return tracks;
+
+    for (const auto& entry : fs::directory_iterator(fullPath)) {
+        if (entry.path().extension() == ".json") {
+            tracks.push_back(entry.path().stem().string());
+        }
+    }
+    return tracks;
+}
 
 bool TrackSerializer::SaveTrack(const Track& track, const std::string& filepath) {
     try {
         json j;
         j["name"] = track.name;
-        
-        // 3 decimali per la lunghezza (precisione al millimetro)
         auto roundLen = [](double val) { return std::round(val * 1000.0) / 1000.0; };
         j["length"] = roundLen(track.lengthMeters);
-        
         j["fences"] = track.fences;
         j["limits"]["left"] = track.limits.leftBound;
         j["limits"]["right"] = track.limits.rightBound;
@@ -68,7 +89,6 @@ bool TrackSerializer::LoadTrack(const std::string& filepath, Track& outTrack) {
         
         json j;
         file >> j;
-        
         j.at("name").get_to(outTrack.name);
         j.at("length").get_to(outTrack.lengthMeters);
         
@@ -82,22 +102,4 @@ bool TrackSerializer::LoadTrack(const std::string& filepath, Track& outTrack) {
         std::cerr << "[JSON Error] Failed to load track: " << e.what() << std::endl;
         return false;
     }
-}
-
-std::vector<std::string> TrackSerializer::GetAvailableTracks(const std::string& directory) {
-    std::vector<std::string> tracks;
-    
-    std::string fullPath = std::string(PROJECT_ROOT_DIR) + "/" + directory;
-    
-    if (!std::filesystem::exists(fullPath)) {
-        return tracks;
-    }
-
-    for (const auto& entry : std::filesystem::directory_iterator(fullPath)) {
-        if (entry.path().extension() == ".json") {
-            tracks.push_back(entry.path().stem().string());
-        }
-    }
-
-    return tracks;
 }

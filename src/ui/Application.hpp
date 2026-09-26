@@ -1,11 +1,9 @@
 #pragma once
 #include <string>
+#include <SDL3/SDL.h> // Inclusione diretta per risolvere tutti i tipi di SDL nativamente
 #include "views/LiveDashboardView.hpp"
 #include "views/AnalysisWorkspaceView.hpp"
 #include "../core/Session.hpp"
-
-struct SDL_Window;
-struct SDL_Renderer;
 
 class Application {
 private:
@@ -18,6 +16,7 @@ private:
 
     SDL_Window* window = nullptr;
     SDL_Renderer* renderer = nullptr;
+    SDL_GLContext gl_context = nullptr;
 
     Session currentSession;
     LiveDashboardView liveDashboardView;

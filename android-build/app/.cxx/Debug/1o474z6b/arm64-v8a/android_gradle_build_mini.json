@@ -1,0 +1,74 @@
+{
+  "buildFiles": [
+    "C:\\Users\\angit\\Documents\\TensorStudio\\CMakeLists.txt",
+    "C:\\Users\\angit\\Documents\\TensorStudio\\external\\sdl\\CMakeLists.txt",
+    "C:\\Users\\angit\\Documents\\TensorStudio\\external\\sdl\\cmake\\3rdparty.cmake",
+    "C:\\Users\\angit\\Documents\\TensorStudio\\external\\sdl\\cmake\\FindLibUSB.cmake",
+    "C:\\Users\\angit\\Documents\\TensorStudio\\external\\sdl\\cmake\\GetGitRevisionDescription.cmake",
+    "C:\\Users\\angit\\Documents\\TensorStudio\\external\\sdl\\cmake\\GetGitRevisionDescription.cmake.in",
+    "C:\\Users\\angit\\Documents\\TensorStudio\\external\\sdl\\cmake\\macros.cmake",
+    "C:\\Users\\angit\\Documents\\TensorStudio\\external\\sdl\\cmake\\PreseedDOSCache.cmake",
+    "C:\\Users\\angit\\Documents\\TensorStudio\\external\\sdl\\cmake\\PreseedEmscriptenCache.cmake",
+    "C:\\Users\\angit\\Documents\\TensorStudio\\external\\sdl\\cmake\\PreseedHaikuCache.cmake",
+    "C:\\Users\\angit\\Documents\\TensorStudio\\external\\sdl\\cmake\\PreseedMSVCCache.cmake",
+    "C:\\Users\\angit\\Documents\\TensorStudio\\external\\sdl\\cmake\\PreseedNokiaNGageCache.cmake",
+    "C:\\Users\\angit\\Documents\\TensorStudio\\external\\sdl\\cmake\\SDL3Config.cmake.in",
+    "C:\\Users\\angit\\Documents\\TensorStudio\\external\\sdl\\cmake\\sdlchecks.cmake",
+    "C:\\Users\\angit\\Documents\\TensorStudio\\external\\sdl\\cmake\\sdlcommands.cmake",
+    "C:\\Users\\angit\\Documents\\TensorStudio\\external\\sdl\\cmake\\sdlcompilers.cmake",
+    "C:\\Users\\angit\\Documents\\TensorStudio\\external\\sdl\\cmake\\sdlcpu.cmake",
+    "C:\\Users\\angit\\Documents\\TensorStudio\\external\\sdl\\cmake\\sdlmanpages.cmake",
+    "C:\\Users\\angit\\Documents\\TensorStudio\\external\\sdl\\cmake\\sdlplatform.cmake",
+    "C:\\Users\\angit\\Documents\\TensorStudio\\external\\sdl\\include\\build_config\\SDL_build_config.h.cmake",
+    "C:\\Users\\angit\\Documents\\TensorStudio\\external\\sdl\\include\\build_config\\SDL_revision.h.cmake",
+    "C:\\Users\\angit\\Documents\\TensorStudio\\external\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "C:\\Users\\angit\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+      "-C",
+      "C:\\Users\\angit\\Documents\\TensorStudio\\android-build\\app\\.cxx\\Debug\\1o474z6b\\arm64-v8a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "C:\\Users\\angit\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+    "-C",
+    "C:\\Users\\angit\\Documents\\TensorStudio\\android-build\\app\\.cxx\\Debug\\1o474z6b\\arm64-v8a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "SDL3_test::@fcc5b8576422346dfa5d": {
+      "artifactName": "SDL3_test",
+      "abi": "arm64-v8a",
+      "output": "C:\\Users\\angit\\Documents\\TensorStudio\\android-build\\app\\.cxx\\Debug\\1o474z6b\\arm64-v8a\\external\\sdl\\libSDL3_test.a",
+      "runtimeFiles": []
+    },
+    "CoreImGui::@6890427a1f51a3e7e1df": {
+      "artifactName": "CoreImGui",
+      "abi": "arm64-v8a",
+      "output": "C:\\Users\\angit\\Documents\\TensorStudio\\android-build\\app\\.cxx\\Debug\\1o474z6b\\arm64-v8a\\libCoreImGui.a",
+      "runtimeFiles": []
+    },
+    "SDL_uclibc::@fcc5b8576422346dfa5d": {
+      "artifactName": "SDL_uclibc",
+      "abi": "arm64-v8a",
+      "output": "C:\\Users\\angit\\Documents\\TensorStudio\\android-build\\app\\.cxx\\Debug\\1o474z6b\\arm64-v8a\\external\\sdl\\libSDL_uclibc.a",
+      "runtimeFiles": []
+    },
+    "TensorStudio::@6890427a1f51a3e7e1df": {
+      "artifactName": "TensorStudio",
+      "abi": "arm64-v8a",
+      "output": "C:\\Users\\angit\\Documents\\TensorStudio\\android-build\\app\\build\\intermediates\\cxx\\Debug\\1o474z6b\\obj\\arm64-v8a\\libmain.so",
+      "runtimeFiles": [
+        "C:\\Users\\angit\\Documents\\TensorStudio\\android-build\\app\\build\\intermediates\\cxx\\Debug\\1o474z6b\\obj\\arm64-v8a\\libSDL3.so"
+      ]
+    },
+    "SDL3-shared::@fcc5b8576422346dfa5d": {
+      "artifactName": "SDL3-shared",
+      "abi": "arm64-v8a",
+      "output": "C:\\Users\\angit\\Documents\\TensorStudio\\android-build\\app\\build\\intermediates\\cxx\\Debug\\1o474z6b\\obj\\arm64-v8a\\libSDL3.so",
+      "runtimeFiles": []
+    }
+  }
+}

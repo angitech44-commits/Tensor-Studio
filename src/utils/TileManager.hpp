@@ -30,7 +30,7 @@ enum class TileState { NotLoaded, Downloading, ReadyForUpload, Uploaded, Failed 
 
 struct Tile {
     TileState state = TileState::NotLoaded;
-    SDL_Texture* texture = nullptr;
+    void* textureID = nullptr; 
     std::vector<unsigned char> rawPixels; 
     int width = 0, height = 0;
 };
@@ -42,7 +42,11 @@ public:
 
     void RequestTile(TileKey key);
     void ProcessCompletedDownloads(SDL_Renderer* renderer);
-    SDL_Texture* GetTexture(TileKey key);
+    
+    void* GetTexture(TileKey key); 
+
+    // LA MAGIA DEL FALLBACK: Se non trova il tassello, cerca quello più grande e calcola il ritaglio (u0, v0, u1, v1)
+    void* GetTextureWithFallback(TileKey key, int maxFallbackDepth, float& u0, float& v0, float& u1, float& v1);
 
 private:
     void WorkerLoop();

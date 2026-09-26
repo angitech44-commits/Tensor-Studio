@@ -5,10 +5,6 @@
 #include <filesystem>
 #include <cctype>
 
-#ifndef PROJECT_ROOT_DIR
-#define PROJECT_ROOT_DIR "."
-#endif
-
 DriverManagerModal::DriverManagerModal() {}
 
 void DriverManagerModal::RefreshDriverList() {
@@ -44,7 +40,7 @@ void DriverManagerModal::Render() {
     ImVec2 center = viewport->GetCenter();
     float scale = ImGui::GetIO().FontGlobalScale;
     
-    ImVec2 modalSize = ImVec2(800.0f * scale, 500.0f * scale); // Più piccolo del Track Manager
+    ImVec2 modalSize = ImVec2(800.0f * scale, 500.0f * scale); 
 
     ImGui::SetNextWindowPos(center, ImGuiCond_Appearing, ImVec2(0.5f, 0.5f));
     ImGui::SetNextWindowSize(modalSize, ImGuiCond_Always);
@@ -120,7 +116,7 @@ void DriverManagerModal::RenderLibraryColumn() {
                     currentFileName = dName;
                     isDriverActive = true;
                     isDriverModified = false;
-                    std::string path = std::string(PROJECT_ROOT_DIR) + "/assets/drivers/" + dName + ".json";
+                    std::string path = DriverSerializer::GetDriversDirectory() + dName + ".json";
                     DriverSerializer::LoadDriver(path, activeDriver);
                 }
             }
@@ -160,10 +156,10 @@ void DriverManagerModal::RenderPropertiesColumn() {
 
     auto saveCurrentDriver = [&]() {
         if (!currentFileName.empty() && currentFileName != activeDriver.name) {
-            std::string oldPath = std::string(PROJECT_ROOT_DIR) + "/assets/drivers/" + currentFileName + ".json";
+            std::string oldPath = DriverSerializer::GetDriversDirectory() + currentFileName + ".json";
             if (std::filesystem::exists(oldPath)) std::filesystem::remove(oldPath);
         }
-        std::string path = std::string(PROJECT_ROOT_DIR) + "/assets/drivers/" + activeDriver.name + ".json";
+        std::string path = DriverSerializer::GetDriversDirectory() + activeDriver.name + ".json";
         DriverSerializer::SaveDriver(activeDriver, path);
         currentFileName = activeDriver.name;
         isDriverModified = false;
@@ -200,7 +196,6 @@ void DriverManagerModal::RenderPropertiesColumn() {
     }
     ImGui::PopStyleColor(3);
 
-    // Popups per salvataggio e cancellazione
     if (showOverwritePopup) ImGui::OpenPopup("Overwrite Driver Warning");
     if (ImGui::BeginPopupModal("Overwrite Driver Warning", NULL, ImGuiWindowFlags_AlwaysAutoResize)) {
         ImGui::Text("A driver named '%s' already exists.\nDo you want to overwrite it?", activeDriver.name.c_str());
@@ -222,7 +217,7 @@ void DriverManagerModal::RenderPropertiesColumn() {
         
         ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0.8f, 0.2f, 0.2f, 1.0f));
         if (ImGui::Button("Yes, Delete", ImVec2(120, 0))) {
-            std::string path = std::string(PROJECT_ROOT_DIR) + "/assets/drivers/" + currentFileName + ".json";
+            std::string path = DriverSerializer::GetDriversDirectory() + currentFileName + ".json";
             if (std::filesystem::exists(path)) std::filesystem::remove(path);
             
             activeDriver = DriverProfile();
@@ -253,7 +248,7 @@ void DriverManagerModal::RenderPropertiesColumn() {
                 isDriverModified = false;
             } else if (pendingDriverLoad == "##CLOSE_MANAGER##") {
                 if (!currentFileName.empty()) {
-                    std::string path = std::string(PROJECT_ROOT_DIR) + "/assets/drivers/" + currentFileName + ".json";
+                    std::string path = DriverSerializer::GetDriversDirectory() + currentFileName + ".json";
                     DriverSerializer::LoadDriver(path, activeDriver);
                 } else {
                     activeDriver = DriverProfile(); 
@@ -264,7 +259,7 @@ void DriverManagerModal::RenderPropertiesColumn() {
                 currentFileName = pendingDriverLoad;
                 isDriverActive = true;
                 isDriverModified = false;
-                std::string path = std::string(PROJECT_ROOT_DIR) + "/assets/drivers/" + pendingDriverLoad + ".json";
+                std::string path = DriverSerializer::GetDriversDirectory() + pendingDriverLoad + ".json";
                 DriverSerializer::LoadDriver(path, activeDriver);
             }
             showUnsavedChangesPopup = false;

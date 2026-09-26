@@ -3,22 +3,25 @@
 #include <fstream>
 #include <filesystem>
 #include <iostream>
+#include <SDL3/SDL.h>
 
 using json = nlohmann::json;
 namespace fs = std::filesystem;
 
-#ifndef PROJECT_ROOT_DIR
-#define PROJECT_ROOT_DIR "."
-#endif
+std::string DriverSerializer::GetDriversDirectory() {
+    char* prefPath = SDL_GetPrefPath("TensorStudio", "Drivers");
+    std::string path = prefPath ? std::string(prefPath) : "./assets/drivers/";
+    if (prefPath) SDL_free(prefPath);
+    
+    if (!fs::exists(path)) fs::create_directories(path);
+    return path;
+}
 
 std::vector<std::string> DriverSerializer::GetAvailableDrivers() {
     std::vector<std::string> drivers;
-    std::string directoryPath = std::string(PROJECT_ROOT_DIR) + "/assets/drivers";
+    std::string directoryPath = GetDriversDirectory();
 
-    if (!fs::exists(directoryPath)) {
-        fs::create_directories(directoryPath);
-        return drivers;
-    }
+    if (!fs::exists(directoryPath)) return drivers;
 
     for (const auto& entry : fs::directory_iterator(directoryPath)) {
         if (entry.path().extension() == ".json") {
@@ -48,11 +51,7 @@ bool DriverSerializer::SaveDriver(const DriverProfile& driver, const std::string
     j["name"] = driver.name;
 
     std::ofstream file(filepath);
-    if (!file.is_open()) {
-        fs::create_directories(fs::path(filepath).parent_path());
-        file.open(filepath);
-        if (!file.is_open()) return false;
-    }
+    if (!file.is_open()) return false;
 
     file << j.dump(4);
     return true;

@@ -22,7 +22,7 @@ CMAKE_AR:FILEPATH=C:/msys64/ucrt64/bin/ar.exe
 
 //Choose the type of build, options are: None Debug Release RelWithDebInfo
 // MinSizeRel ...
-CMAKE_BUILD_TYPE:STRING=
+CMAKE_BUILD_TYPE:STRING=Release
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
@@ -728,9 +728,6 @@ ZLIB_LIBRARY_DEBUG:FILEPATH=C:/Users/angit/Documents/TensorStudio/build/vcpkg_in
 //Path to a library.
 ZLIB_LIBRARY_RELEASE:FILEPATH=C:/Users/angit/Documents/TensorStudio/build/vcpkg_installed/x64-mingw-static/lib/libzs.a
 
-//Path to a program.
-Z_VCPKG_CL:FILEPATH=Z_VCPKG_CL-NOTFOUND
-
 //The directory which contains the installed libraries for each
 // triplet
 _VCPKG_INSTALLED_DIR:PATH=C:/Users/angit/Documents/TensorStudio/build/vcpkg_installed
@@ -969,7 +966,7 @@ COMPILER_SUPPORTS_SSE4_2:INTERNAL=1
 //Details about finding PkgConfig
 FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[C:/msys64/ucrt64/bin/pkg-config.exe][v2.5.1()]
 //Details about finding ZLIB
-FIND_PACKAGE_MESSAGE_DETAILS_ZLIB:INTERNAL=[C:/Users/angit/Documents/TensorStudio/build/vcpkg_installed/x64-mingw-static/lib/libzs.a][C:/Users/angit/Documents/TensorStudio/build/vcpkg_installed/x64-mingw-static/include][ ][v1.3.2(1)]
+FIND_PACKAGE_MESSAGE_DETAILS_ZLIB:INTERNAL=[optimized;C:/Users/angit/Documents/TensorStudio/build/vcpkg_installed/x64-mingw-static/lib/libzs.a;debug;C:/Users/angit/Documents/TensorStudio/build/vcpkg_installed/x64-mingw-static/debug/lib/libzsd.a][C:/Users/angit/Documents/TensorStudio/build/vcpkg_installed/x64-mingw-static/include][ ][v1.3.2(1)]
 //Details about finding nlohmann_json
 FIND_PACKAGE_MESSAGE_DETAILS_nlohmann_json:INTERNAL=[C:/Users/angit/Documents/TensorStudio/build/vcpkg_installed/x64-mingw-static/share/nlohmann_json/nlohmann_jsonConfig.cmake][v3.12.0()]
 //ADVANCED property for variable: GIT_EXECUTABLE

@@ -133,7 +133,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "external/sdl/include-revision/SDL3/SDL_revision.h"
   "external/sdl/SDL3Config.cmake"
   "external/sdl/SDL3ConfigVersion.cmake"
-  "external/sdl/include-config-/build_config/SDL_build_config.h"
+  "external/sdl/include-config-release/build_config/SDL_build_config.h"
   "external/sdl/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 

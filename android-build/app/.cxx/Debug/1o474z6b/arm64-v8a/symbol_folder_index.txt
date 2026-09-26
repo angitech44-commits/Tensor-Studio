@@ -1,0 +1,1 @@
+C:\Users\angit\Documents\TensorStudio\android-build\app\build\intermediates\cxx\Debug\1o474z6b\obj\arm64-v8a

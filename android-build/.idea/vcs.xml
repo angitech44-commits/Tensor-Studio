@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../external/eigen" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../external/imgui" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../external/implot" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../external/json" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../external/sdl" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../external/stb" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../external/vcpkg" vcs="Git" />
+  </component>
+</project>

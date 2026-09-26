@@ -98,19 +98,6 @@ CMakeFiles/TensorStudio.dir/src/ui/Application.cpp.obj: \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/uses_allocator.h \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/uses_allocator_args.h \
  C:/msys64/ucrt64/include/c++/15.2.0/tuple \
- C:\Users\angit\Documents\TensorStudio\src\ui\views/LiveDashboardView.hpp \
- C:\Users\angit\Documents\TensorStudio\src\ui\views/AnalysisWorkspaceView.hpp \
- C:\Users\angit\Documents\TensorStudio\src\ui\views/SessionSetupView.hpp \
- C:/Users/angit/Documents/TensorStudio/src/core/Session.hpp \
- C:/msys64/ucrt64/include/c++/15.2.0/vector \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_uninitialized.h \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_vector.h \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_bvector.h \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/vector.tcc \
- C:/Users/angit/Documents/TensorStudio/src/core/DriverEntry.hpp \
- C:/Users/angit/Documents/TensorStudio/src/core/Track.hpp \
- C:/Users/angit/Documents/TensorStudio/src/ui/components/TrackManagerModal.hpp \
- C:/Users/angit/Documents/TensorStudio/src/ui/components/TrackMapView.hpp \
  C:/Users/angit/Documents/TensorStudio/external/sdl/include/SDL3/SDL.h \
  C:/Users/angit/Documents/TensorStudio/external/sdl/include/SDL3/SDL_stdinc.h \
  C:/Users/angit/Documents/TensorStudio/external/sdl/include/SDL3/SDL_platform_defines.h \
@@ -302,21 +289,16 @@ CMakeFiles/TensorStudio.dir/src/ui/Application.cpp.obj: \
  C:/Users/angit/Documents/TensorStudio/external/sdl/include/SDL3/SDL_tray.h \
  C:/Users/angit/Documents/TensorStudio/external/sdl/include/SDL3/SDL_version.h \
  C:/Users/angit/Documents/TensorStudio/external/sdl/include/SDL3/SDL_oldnames.h \
- C:/Users/angit/Documents/TensorStudio/external/imgui/imgui.h \
- C:/Users/angit/Documents/TensorStudio/external/imgui/imconfig.h \
- C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/float.h \
- C:/msys64/ucrt64/include/float.h C:/msys64/ucrt64/include/assert.h \
- C:/msys64/ucrt64/include/c++/15.2.0/memory \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_tempbuf.h \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_raw_storage_iter.h \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/align.h \
+ C:\Users\angit\Documents\TensorStudio\src\ui\views/LiveDashboardView.hpp \
+ C:/msys64/ucrt64/include/c++/15.2.0/vector \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_uninitialized.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_vector.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_bvector.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/vector.tcc \
+ C:/Users/angit/Documents/TensorStudio/src/analysis/LiveProcessor.hpp \
+ C:/msys64/ucrt64/include/c++/15.2.0/thread \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/std_thread.h \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/unique_ptr.h \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr.h \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr_base.h \
- C:/msys64/ucrt64/include/c++/15.2.0/typeinfo \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/allocated_ptr.h \
- C:/msys64/ucrt64/include/c++/15.2.0/ext/aligned_buffer.h \
- C:/msys64/ucrt64/include/c++/15.2.0/ext/atomicity.h \
  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/gthr.h \
  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/gthr-default.h \
  C:/msys64/ucrt64/include/pthread.h C:/msys64/ucrt64/include/signal.h \
@@ -328,57 +310,41 @@ CMakeFiles/TensorStudio.dir/src/ui/Application.cpp.obj: \
  C:/msys64/ucrt64/include/pthread_compat.h \
  C:/msys64/ucrt64/include/sched.h \
  C:/msys64/ucrt64/include/pthread_unistd.h \
- C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/atomic_word.h \
- C:/msys64/ucrt64/include/c++/15.2.0/ext/concurrence.h \
- C:/msys64/ucrt64/include/c++/15.2.0/exception \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/exception_ptr.h \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/cxxabi_init_exception.h \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/nested_exception.h \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr_atomic.h \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/atomic_base.h \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/atomic_lockfree_defines.h \
- C:/msys64/ucrt64/include/c++/15.2.0/backward/auto_ptr.h \
- C:/msys64/ucrt64/include/c++/15.2.0/pstl/glue_memory_defs.h \
- C:/msys64/ucrt64/include/c++/15.2.0/pstl/execution_defs.h \
- C:/Users/angit/Documents/TensorStudio/src/utils/TileManager.hpp \
- C:/msys64/ucrt64/include/c++/15.2.0/unordered_map \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/unordered_map.h \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/hashtable.h \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/hashtable_policy.h \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/enable_special_members.h \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/node_handle.h \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/erase_if.h \
- C:/msys64/ucrt64/include/c++/15.2.0/mutex \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/this_thread_sleep.h \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/chrono.h \
  C:/msys64/ucrt64/include/c++/15.2.0/ratio \
  C:/msys64/ucrt64/include/c++/15.2.0/cstdint \
  C:/msys64/ucrt64/include/c++/15.2.0/limits \
  C:/msys64/ucrt64/include/c++/15.2.0/ctime \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/parse_numbers.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/atomic \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/atomic_base.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/atomic_lockfree_defines.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/mutex \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/std_mutex.h \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/unique_lock.h \
  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/error_constants.h \
- C:/msys64/ucrt64/include/c++/15.2.0/thread \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/std_thread.h \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/this_thread_sleep.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/ext/atomicity.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/atomic_word.h \
+ C:/Users/angit/Documents/TensorStudio/src/core/TelemetryData.hpp \
+ C:/Users/angit/Documents/TensorStudio/src/core/Track.hpp \
+ C:/Users/angit/Documents/TensorStudio/src/utils/ThreadSafeQueue.hpp \
  C:/msys64/ucrt64/include/c++/15.2.0/queue \
  C:/msys64/ucrt64/include/c++/15.2.0/deque \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_deque.h \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/deque.tcc \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_heap.h \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_queue.h \
- C:/msys64/ucrt64/include/c++/15.2.0/atomic \
- C:/msys64/ucrt64/include/c++/15.2.0/condition_variable \
- C:/Users/angit/Documents/TensorStudio/src/ui/components/DriverManagerModal.hpp \
- C:/Users/angit/Documents/TensorStudio/src/core/DriverProfile.hpp \
- C:/Users/angit/Documents/TensorStudio/src/io/DriverSerializer.hpp \
- C:/Users/angit/Documents/TensorStudio/external/implot/implot.h \
- C:/Users/angit/Documents/TensorStudio/external/imgui/backends/imgui_impl_sdl3.h \
- C:/Users/angit/Documents/TensorStudio/external/imgui/backends/imgui_impl_sdlrenderer3.h \
- C:/msys64/ucrt64/include/c++/15.2.0/iostream \
- C:/msys64/ucrt64/include/c++/15.2.0/ostream \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/ostream.h \
+ C:/Users/angit/Documents/TensorStudio/src/io/UDPReceiver.hpp \
+ C:/Users/angit/Documents/TensorStudio/src/io/FileLogger.hpp \
+ C:/msys64/ucrt64/include/c++/15.2.0/fstream \
+ C:/msys64/ucrt64/include/c++/15.2.0/istream \
  C:/msys64/ucrt64/include/c++/15.2.0/ios \
+ C:/msys64/ucrt64/include/c++/15.2.0/exception \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/exception_ptr.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/cxxabi_init_exception.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/typeinfo \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/nested_exception.h \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/ios_base.h \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_classes.h \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_classes.tcc \
@@ -395,6 +361,136 @@ CMakeFiles/TensorStudio.dir/src/ui/Application.cpp.obj: \
  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/ctype_inline.h \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_facets.tcc \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/basic_ios.tcc \
+ C:/msys64/ucrt64/include/c++/15.2.0/ostream \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/ostream.h \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/ostream.tcc \
- C:/msys64/ucrt64/include/c++/15.2.0/istream \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/istream.tcc
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/istream.tcc \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/codecvt.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/basic_file.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++io.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/fstream.tcc \
+ C:/Users/angit/Documents/TensorStudio/src/ui/components/TrackMapView.hpp \
+ C:/Users/angit/Documents/TensorStudio/external/imgui/imgui.h \
+ C:/Users/angit/Documents/TensorStudio/external/imgui/imconfig.h \
+ C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/float.h \
+ C:/msys64/ucrt64/include/float.h C:/msys64/ucrt64/include/assert.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/memory \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_tempbuf.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_raw_storage_iter.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/align.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr_base.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/allocated_ptr.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/ext/aligned_buffer.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/ext/concurrence.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr_atomic.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/backward/auto_ptr.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/pstl/glue_memory_defs.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/pstl/execution_defs.h \
+ C:/Users/angit/Documents/TensorStudio/src/utils/TileManager.hpp \
+ C:/msys64/ucrt64/include/c++/15.2.0/unordered_map \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/unordered_map.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/hashtable.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/hashtable_policy.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/enable_special_members.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/node_handle.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/erase_if.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/condition_variable \
+ C:/Users/angit/Documents/TensorStudio/src/ui/components/TrackManagerModal.hpp \
+ C:\Users\angit\Documents\TensorStudio\src\ui\views/AnalysisWorkspaceView.hpp \
+ C:/Users/angit/Documents/TensorStudio/src/core/Session.hpp \
+ C:/Users/angit/Documents/TensorStudio/src/core/DriverEntry.hpp \
+ C:\Users\angit\Documents\TensorStudio\src\ui\views/SessionSetupView.hpp \
+ C:/Users/angit/Documents/TensorStudio/src/ui/components/DriverManagerModal.hpp \
+ C:/Users/angit/Documents/TensorStudio/src/core/DriverProfile.hpp \
+ C:/Users/angit/Documents/TensorStudio/src/ui/components/TelemetryImportModal.hpp \
+ C:/Users/angit/Documents/TensorStudio/src/analysis/LapSplitter.hpp \
+ C:/Users/angit/Documents/TensorStudio/src/io/DriverSerializer.hpp \
+ C:\Users\angit\Documents\TensorStudio\src\ui\views/DataWorksheetView.hpp \
+ C:/Users/angit/Documents/TensorStudio/src/ui/layouts/LapComparisonLayout.hpp \
+ C:/Users/angit/Documents/TensorStudio/external/sdl/include/SDL3/SDL_opengl.h \
+ C:/msys64/ucrt64/include/windows.h C:/msys64/ucrt64/include/sdkddkver.h \
+ C:/msys64/ucrt64/include/excpt.h C:/msys64/ucrt64/include/windef.h \
+ C:/msys64/ucrt64/include/winapifamily.h \
+ C:/msys64/ucrt64/include/minwindef.h \
+ C:/msys64/ucrt64/include/specstrings.h C:/msys64/ucrt64/include/sal.h \
+ C:/msys64/ucrt64/include/concurrencysal.h \
+ C:/msys64/ucrt64/include/driverspecs.h C:/msys64/ucrt64/include/winnt.h \
+ C:/msys64/ucrt64/include/_mingw_unicode.h \
+ C:/msys64/ucrt64/include/apiset.h C:/msys64/ucrt64/include/basetsd.h \
+ C:/msys64/ucrt64/include/guiddef.h C:/msys64/ucrt64/include/pshpack4.h \
+ C:/msys64/ucrt64/include/poppack.h C:/msys64/ucrt64/include/pshpack4.h \
+ C:/msys64/ucrt64/include/pshpack2.h C:/msys64/ucrt64/include/poppack.h \
+ C:/msys64/ucrt64/include/pshpack2.h C:/msys64/ucrt64/include/pshpack8.h \
+ C:/msys64/ucrt64/include/pshpack8.h C:/msys64/ucrt64/include/ktmtypes.h \
+ C:/msys64/ucrt64/include/winbase.h \
+ C:/msys64/ucrt64/include/apisetcconv.h \
+ C:/msys64/ucrt64/include/minwinbase.h \
+ C:/msys64/ucrt64/include/bemapiset.h C:/msys64/ucrt64/include/debugapi.h \
+ C:/msys64/ucrt64/include/errhandlingapi.h \
+ C:/msys64/ucrt64/include/fibersapi.h C:/msys64/ucrt64/include/fileapi.h \
+ C:/msys64/ucrt64/include/handleapi.h C:/msys64/ucrt64/include/heapapi.h \
+ C:/msys64/ucrt64/include/ioapiset.h \
+ C:/msys64/ucrt64/include/interlockedapi.h \
+ C:/msys64/ucrt64/include/jobapi.h \
+ C:/msys64/ucrt64/include/libloaderapi.h \
+ C:/msys64/ucrt64/include/memoryapi.h \
+ C:/msys64/ucrt64/include/namedpipeapi.h \
+ C:/msys64/ucrt64/include/namespaceapi.h \
+ C:/msys64/ucrt64/include/processenv.h \
+ C:/msys64/ucrt64/include/processthreadsapi.h \
+ C:/msys64/ucrt64/include/processtopologyapi.h \
+ C:/msys64/ucrt64/include/profileapi.h \
+ C:/msys64/ucrt64/include/realtimeapiset.h \
+ C:/msys64/ucrt64/include/securityappcontainer.h \
+ C:/msys64/ucrt64/include/securitybaseapi.h \
+ C:/msys64/ucrt64/include/synchapi.h \
+ C:/msys64/ucrt64/include/sysinfoapi.h \
+ C:/msys64/ucrt64/include/systemtopologyapi.h \
+ C:/msys64/ucrt64/include/threadpoolapiset.h \
+ C:/msys64/ucrt64/include/threadpoollegacyapiset.h \
+ C:/msys64/ucrt64/include/utilapiset.h \
+ C:/msys64/ucrt64/include/wow64apiset.h \
+ C:/msys64/ucrt64/include/winerror.h \
+ C:/msys64/ucrt64/include/fltwinerror.h \
+ C:/msys64/ucrt64/include/timezoneapi.h C:/msys64/ucrt64/include/wingdi.h \
+ C:/msys64/ucrt64/include/pshpack1.h C:/msys64/ucrt64/include/winuser.h \
+ C:/msys64/ucrt64/include/tvout.h C:/msys64/ucrt64/include/winnls.h \
+ C:/msys64/ucrt64/include/datetimeapi.h \
+ C:/msys64/ucrt64/include/stringapiset.h \
+ C:/msys64/ucrt64/include/wincon.h C:/msys64/ucrt64/include/wincontypes.h \
+ C:/msys64/ucrt64/include/consoleapi.h \
+ C:/msys64/ucrt64/include/consoleapi2.h \
+ C:/msys64/ucrt64/include/consoleapi3.h C:/msys64/ucrt64/include/winver.h \
+ C:/msys64/ucrt64/include/winreg.h C:/msys64/ucrt64/include/reason.h \
+ C:/msys64/ucrt64/include/winnetwk.h C:/msys64/ucrt64/include/wnnc.h \
+ C:/msys64/ucrt64/include/virtdisk.h C:/msys64/ucrt64/include/stralign.h \
+ C:/msys64/ucrt64/include/sec_api/stralign_s.h \
+ C:/msys64/ucrt64/include/winsvc.h C:/msys64/ucrt64/include/mcx.h \
+ C:/msys64/ucrt64/include/imm.h \
+ C:/Users/angit/Documents/TensorStudio/external/sdl/include/SDL3/SDL_opengl_glext.h \
+ C:/Users/angit/Documents/TensorStudio/external/imgui/imgui_internal.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/math.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/cmath \
+ C:/msys64/ucrt64/include/math.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/specfun.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/tr1/gamma.tcc \
+ C:/msys64/ucrt64/include/c++/15.2.0/tr1/special_function_util.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/tr1/bessel_function.tcc \
+ C:/msys64/ucrt64/include/c++/15.2.0/tr1/beta_function.tcc \
+ C:/msys64/ucrt64/include/c++/15.2.0/tr1/ell_integral.tcc \
+ C:/msys64/ucrt64/include/c++/15.2.0/tr1/exp_integral.tcc \
+ C:/msys64/ucrt64/include/c++/15.2.0/tr1/hypergeometric.tcc \
+ C:/msys64/ucrt64/include/c++/15.2.0/tr1/legendre_function.tcc \
+ C:/msys64/ucrt64/include/c++/15.2.0/tr1/modified_bessel_func.tcc \
+ C:/msys64/ucrt64/include/c++/15.2.0/tr1/poly_hermite.tcc \
+ C:/msys64/ucrt64/include/c++/15.2.0/tr1/poly_laguerre.tcc \
+ C:/msys64/ucrt64/include/c++/15.2.0/tr1/riemann_zeta.tcc \
+ C:/Users/angit/Documents/TensorStudio/external/implot/implot.h \
+ C:/Users/angit/Documents/TensorStudio/external/imgui/backends/imgui_impl_sdl3.h \
+ C:/Users/angit/Documents/TensorStudio/external/imgui/backends/imgui_impl_sdlrenderer3.h \
+ C:/Users/angit/Documents/TensorStudio/external/imgui/backends/imgui_impl_opengl3.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/map \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_tree.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_map.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_multimap.h
